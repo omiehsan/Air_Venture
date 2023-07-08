@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "639712765365",
+    "project_id": "airventure-da32a",
+    "storage_bucket": "airventure-da32a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639712765365:android:de66c9df5718a5c3ca65fc",
+        "android_client_info": {
+          "package_name": "com.example.hawai_jubu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639712765365-i30b7ush0lqa2q2ps9dbf412u059gucu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuL_rQXCcUJ08USw11jcQsHS_KZbmHmgQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639712765365-i30b7ush0lqa2q2ps9dbf412u059gucu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
