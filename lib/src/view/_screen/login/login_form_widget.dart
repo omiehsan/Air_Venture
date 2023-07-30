@@ -1,22 +1,45 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import '../../../controller/authentication/controllers/signin_controller.dart';
 import '../../../utils/widgets/button/elevated_button_widget.dart';
 import '../forget_password/buildshowmodalbottomsheet.dart';
 
 class LoginForm extends StatelessWidget {
-  const LoginForm({
-    super.key,
-  });
+   LoginForm({
+     Key? key,
+   }) : super(key: key);
+
+  RxBool isVisible = true.obs;
+  static final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    final loginController = Get.put(LoginController());
     return Form(
+      key: _formKey,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              controller: loginController.email,
+              validator: (value) {
+                // Is Empty Validation
+                if (value == null || value.isEmpty) {
+                  return 'Email is Required!';
+                }
+                // Email Field Validation
+                if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
+                  return "Please Enter a Valid Email";
+                }
+                // Return Null If Valid
+                return null;
+              },
               decoration: InputDecoration(
                   prefixIcon: const Icon(
                     Icons.person_outline_outlined,
@@ -32,18 +55,24 @@ class LoginForm extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.fingerprint),
-                hintText: "Password",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none),
-                fillColor: Colors.white60,
-                filled: true,
-                suffixIcon: const IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.remove_red_eye),
+            Obx(
+                  () => TextFormField(
+                obscureText: isVisible.value,
+                controller: loginController.password,
+                validator: (value) {
+                  // Is Empty Validation
+                  if (value == null || value.isEmpty) {
+                    return 'Password is Required!';
+                  }
+                  // Return Null If Valid
+                  return null;
+                },
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.fingerprint),
+                  suffixIcon: IconButton(
+                    onPressed: () => passVisibility(),
+                    icon: isVisible.value ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+                  ),
                 ),
               ),
             ),
@@ -58,13 +87,22 @@ class LoginForm extends StatelessWidget {
               ),
             ),
             SizedBox(),
-            ButtonWidget(
-              title: 'Sign In',
-              onPressed: () {},
-            )
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    LoginController.instance.loginUser(loginController.email.text.trim(), loginController.password.text.trim());
+                  }
+                }, child: Text("Login"),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
+   passVisibility() {
+     isVisible.value = !isVisible.value;
+   }
 }

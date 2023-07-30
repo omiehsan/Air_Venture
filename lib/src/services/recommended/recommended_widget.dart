@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hawai_jubu/src/services/recommended/recommended_models.dart';
 
 class RecommendedFlightsWidgets extends StatefulWidget {
   const RecommendedFlightsWidgets({Key? key}) : super(key: key);
@@ -20,102 +21,115 @@ class _RecommendedFlightsWidgetsState extends State<RecommendedFlightsWidgets> {
 
   @override
   Widget build(BuildContext context) {
+    final recoItem = DashRecommendedModels.recoItem;
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.85,
+      width: double.infinity,
       height: 120,
-      child: Card(
-        elevation: 3,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Stack(
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: InkWell(
-                    // onTap: () {},
-                    child: Container(
-                      height: 150,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: const DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage("assets/images/one.png"),
+      child: ListView.builder(
+        itemCount: recoItem.length,
+        // shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => GestureDetector(
+          onTap: recoItem[index].onPress,
+          child: Container(
+            margin: const EdgeInsets.all(5),
+            child: Card(
+              elevation: 5,
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(5),
+                    child: InkWell(
+                      // onTap: () {},
+                      child: Container(
+                        height: MediaQuery.of(context).size.height*0.9,
+                        width: MediaQuery.of(context).size.width*0.25,
+
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage(recoItem[index].recoImage),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(8),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.house_rounded,
-                            size: 20,
-                            color: Colors.orange,
-                          ),
-                          Text(
-                            "House",
-                            style: GoogleFonts.poppins(),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        " \$400",
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.bold,
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                const Icon(
+                                  Icons.house_rounded,
+                                  size: 20,
+                                  color: Colors.orange,
+                                ),
+                                Text(
+                                  recoItem[index].recoType,
+                                  style: GoogleFonts.poppins(),
+                                ),
+                              ],
+                            ),
+                            Text(
+                              " \$400",
+                              style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              recoItem[index].recoName,
+                              style: GoogleFonts.poppins(),
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.location_on,
+                                  size: 20,
+                                  color: Colors.green.shade500,
+                                ),
+                                Text(
+                                  recoItem[index].recoLocation,
+                                  style: GoogleFonts.poppins(),
+                                ),
+                              ],
+                            ),
+
+                          ],
                         ),
-                      ),
-                      Text(
-                        " Le Meridian",
-                        style: GoogleFonts.poppins(),
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.location_on,
-                            size: 20,
-                            color: Colors.green.shade500,
+                        // SizedBox(width: 25,),
+                        SizedBox(
+                          width: 24,
+                          height: 24,
+                          child: FloatingActionButton(
+                            onPressed: toggleReaction,
+                            mini: true,
+                            backgroundColor: Colors.white70,
+                            child: Icon(
+                              isReacted ? Icons.favorite : Icons.favorite_border,
+                              color: Colors.orange,
+                              size: 21,
+                            ),
                           ),
-                          Text(
-                            "Dhaka",
-                            style: GoogleFonts.poppins(),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Positioned(
-              top: 0,
-              right: 0,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  width: 30,
-                  height: 30,
-                  child: FloatingActionButton(
-                    onPressed: toggleReaction,
-                    mini: true,
-                    child: Icon(
-                      isReacted ? Icons.favorite : Icons.favorite_border,
-                      size: 20,
+                        ),
+                      ],
                     ),
                   ),
-                ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

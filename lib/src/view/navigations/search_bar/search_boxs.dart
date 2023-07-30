@@ -1,6 +1,5 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-
 import '../../../utils/constaints/styles_colors.dart';
 
 
@@ -38,14 +37,6 @@ class _SearchBoxsState extends State<SearchBoxs> {
   @override
   Widget build(BuildContext context) {
     return Container(
-
-      // decoration: const BoxDecoration(
-      //   gradient: LinearGradient(
-      //     begin: Alignment.topLeft,
-      //     end: Alignment.bottomRight,
-      //     colors: <Color>[Color(0xFFfc8a28), Color(0xFFc55c00)],
-      //   ),
-      // ),
       color: Colors.brown.shade100,
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       child: ListView(

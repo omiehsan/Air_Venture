@@ -33,8 +33,7 @@ class MidBarWidget extends StatelessWidget {
                 Text(
                   text,
                   style: TextStyle(fontSize: 12),
-                ), // <-- Icon
-                // <-- Text
+                ),
               ],
             ),
           ),

@@ -19,7 +19,8 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: onTap,
         icon: const Icon(Icons.arrow_back),
       ),
-      title: Text(title),
+      title: Text(title,textAlign: TextAlign.center),
+      centerTitle: true,
       flexibleSpace: Container(
         // Add a flexibleSpace to set the gradient background
         decoration: const BoxDecoration(

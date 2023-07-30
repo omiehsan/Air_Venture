@@ -65,7 +65,7 @@ class _TicketViewState extends State<TicketView> {
                             height: 5,
                           ),
                           Text(
-                            "JT-189",
+                            "BBDA-189",
                             style: GoogleFonts.poppins(
                               fontSize: 12,
                             ),

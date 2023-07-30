@@ -35,14 +35,6 @@ class DashCategoriesModel {
     DashCategoriesModel(Mobile_Servicing_Title, Mobile_Servicing_Image),
     DashCategoriesModel(Computer_Servicing_Title, Computer_Servicing_Image),
     DashCategoriesModel(Moving_Servicing_Title, Moving_Servicing_Image),
-    // DashCategoriesModel(SEO_Title, Moving_ServicingSEO_Image),
-    // DashCategoriesModel(Social_Title, Social_Image),
-    // DashCategoriesModel(Video_Animation_Title, Video_Animation_Image),
-    // DashCategoriesModel(Music_Audio_Title, Music_Audio_Image),
-    // DashCategoriesModel(Voice_Over_Title, Voice_Over_Image),
-    // DashCategoriesModel(Writing_Translatation_Title, Writing_Translatation_Image),
-    // DashCategoriesModel(Data_Entry_Title, Data_Entry_Image),
-    // DashCategoriesModel(Lifestyle_Title, Lifestyle_Image),
-    // DashCategoriesModel(Business_Title, Business_Image),
+
   ];
 }

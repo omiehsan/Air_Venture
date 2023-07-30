@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hawai_jubu/src/services/ticket/ticket.dart';
+import 'package:hawai_jubu/src/services/ticket/ticket_view.dart';
 import '../../utils/constaints/space.dart';
 
 class Trip extends StatelessWidget {
@@ -10,13 +10,13 @@ class Trip extends StatelessWidget {
     return Scaffold(
       body: Container(child:
       Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.0),
         child: SingleChildScrollView(
           child: Column(
 
             children: [
               Space.Y(60),
-              for (int i = 0; i < 3; i++) Ticket()
+              for (int i = 0; i < 3; i++) TicketView()
             ],
           ),
         ),

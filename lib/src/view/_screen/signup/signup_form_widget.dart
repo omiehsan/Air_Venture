@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:hawai_jubu/src/controller/authentication/models/user_model.dart';
 import '../../../controller/authentication/controllers/singup_controller.dart';
 import '../../../utils/constaints/styles_colors.dart';
 import '../../../utils/widgets/form/form_field_widget.dart';
@@ -24,8 +25,8 @@ class SignUpFormWidget extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.9,
               height: MediaQuery.of(context).size.height * 0.085,
-              child:  FormFieldWidget(
-                controller:Controller.fullName,
+              child: FormFieldWidget(
+                controller: Controller.fullName,
                 prefixIcon: Icons.person_outline_outlined,
                 hintText: "Full name",
                 fillColor: Colors.white60,
@@ -37,47 +38,68 @@ class SignUpFormWidget extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.9,
               height: MediaQuery.of(context).size.height * 0.085,
-              child:  FormFieldWidget(
-                
+              child: FormFieldWidget(
+                controller: Controller.email,
                 prefixIcon: Icons.email_outlined,
                 hintText: "E-mail",
                 fillColor: Colors.white60,
                 filled: true,
-                suffixIcon: null, controller: Controller.email, // Pass null explicitly
+                suffixIcon: null,
               ),
             ),
             const SizedBox(),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.9,
               height: MediaQuery.of(context).size.height * 0.085,
-              child:  FormFieldWidget(
+              child: FormFieldWidget(
                 prefixIcon: Icons.phone,
                 hintText: "Phone no.",
                 fillColor: Colors.white60,
                 filled: true,
-                suffixIcon: null, controller: Controller.phoneNo, // Pass null explicitly
+                suffixIcon: null,
+                controller: Controller.phoneNo, // Pass null explicitly
               ),
             ),
             const SizedBox(),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.9,
               height: MediaQuery.of(context).size.height * 0.085,
-              child:  FormFieldWidget(
+              child: FormFieldWidget(
                 prefixIcon: Icons.lock_outline_sharp,
                 hintText: "Password",
                 fillColor: Colors.white60,
                 filled: true,
-                suffixIcon: Icons.remove_red_eye, controller: Controller.password,
+                suffixIcon: Icons.remove_red_eye,
+                controller: Controller.password,
               ),
             ),
             const SizedBox(),
+
+            // This is Signup Button and these related stuff
+
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.9,
               height: MediaQuery.of(context).size.height * 0.07,
               child: ElevatedButton(
                 onPressed: () {
-                  if(_formkey.currentState!.validate()){
-                    SignupController.instance.registerUser(Controller.email.text.trim(), Controller.password.text.trim());
+                  if (_formkey.currentState!.validate()) {
+
+
+                    // Email & Password Authentication
+
+                    // SignupController.instance.registerUser(Controller.email.text.trim(), Controller.password.text.trim());
+
+                    // Phone no. Authentication
+
+                    // SignupController.instance.phoneAuthentication(Controller.phoneNo.text.trim());
+
+                    final user = UserModel(
+                        email: Controller.email.text.trim(),
+                        password: Controller.password.text.trim(),
+                        phoneNo: Controller.phoneNo.text.trim(),
+                        fullname: Controller.fullName.text.trim());
+                    SignupController.instance.createUser(user);
+
                   }
                 },
                 style: ElevatedButton.styleFrom(

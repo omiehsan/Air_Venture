@@ -69,6 +69,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '639712765365',
     projectId: 'airventure-da32a',
     storageBucket: 'airventure-da32a.appspot.com',
+    androidClientId: '639712765365-p42ri5177bh4p7ifaf23s1d8eclncb34.apps.googleusercontent.com',
     iosClientId: '639712765365-it5m2eiku9rt3lr6ov48d257hjak3dmq.apps.googleusercontent.com',
     iosBundleId: 'com.example.hawaiJubu',
   );

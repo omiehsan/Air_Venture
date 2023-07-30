@@ -6,13 +6,14 @@ import 'package:hawai_jubu/src/services/category_all/category_seeall.dart';
 import 'package:hawai_jubu/src/services/ticket/ticket_view.dart';
 import 'package:hawai_jubu/src/utils/constaints/images.dart';
 import 'package:hawai_jubu/src/utils/constaints/texts.dart';
+import 'package:hawai_jubu/src/view/_screen/flight/flight.dart';
+import 'package:lottie/lottie.dart';
 import '../../../services/best_deals/category_widgets.dart';
 import '../../../services/recommended/recommended_widget.dart';
 import '../../navigations/navigation_bar/mid_bar.dart';
 import '../../navigations/navigation_bar/notifications.dart';
 import '../../navigations/search_bar/search_boxs.dart';
 import '../../profile/profile_screen.dart';
-import '../tileview.dart';
 
 class DashBoard extends StatelessWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown.shade100,
+      backgroundColor: Colors.brown.shade50,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -33,7 +34,7 @@ class DashBoard extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Image.asset(
             jSplashLogo,
-            width: MediaQuery.of(context).size.width * 0.70,
+            width: MediaQuery.of(context).size.width * 0.50,
             // height: MediaQuery.of(context).size.height *0.40,
           ),
         ),
@@ -42,7 +43,7 @@ class DashBoard extends StatelessWidget {
           IconButton(
             icon: const Icon(
               Icons.notifications_none_outlined,
-              size: 25,
+              size: 30,
             ),
             splashRadius: 25,
             onPressed: () {
@@ -54,20 +55,24 @@ class DashBoard extends StatelessWidget {
               );
             },
           ),
-          IconButton(
-            icon: const Icon(
-              Icons.account_circle,
-              size: 25,
+          Container(
+            margin: const EdgeInsets.only(right: 8),
+            child: IconButton(
+              icon: Lottie.network(
+                'https://lottie.host/24de3145-2caf-4d01-be01-06c0cdcc4549/CKNcF5YXBg.json',
+                width: 27,
+                height: 27,
+              ),
+              splashRadius: 25,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(),
+                  ),
+                );
+              },
             ),
-            splashRadius: 25,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ProfileScreen(),
-                ),
-              );
-            },
           ),
         ],
         elevation: 3,
@@ -185,50 +190,24 @@ class DashBoard extends StatelessWidget {
                           fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                     TextButton(
-                      child: Text(jDashSeeall,
-                          style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 17,
-                            decoration: TextDecoration.underline,
-                            color: Colors.deepOrange,
-                          )),
+                      child: Text(
+                        jDashSeeall,
+                        style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 17,
+                          decoration: TextDecoration.underline,
+                          color: Colors.deepOrange,
+                        ),
+                      ),
                       onPressed: () {},
                     ),
                   ],
                 ),
               ),
             ),
-            DashCategoryWidget(textTheme: Typography.blackCupertino),
-            Padding(
-              padding:
-                  const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      jDashPopular,
-                      style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    TextButton(
-                      child: Text(jDashSeeall,
-                          style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 17,
-                            decoration: TextDecoration.underline,
-                            color: Colors.deepOrange,
-                          )),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            DashCategoryWidget(textTheme: Typography.blackCupertino),
-            TicketView(),
-            const RecommendedFlightsWidgets()
+            const RecommendedFlightsWidgets(),
+            const TicketView(),
+
           ],
         ),
       ),

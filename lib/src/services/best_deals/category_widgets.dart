@@ -17,7 +17,7 @@ class DashCategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 208,
+      height: 198,
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
@@ -34,7 +34,7 @@ class DashCategoryWidget extends StatelessWidget {
             child: Card(
               elevation: 6,
               clipBehavior: Clip.antiAlias,
-              child: Container(
+              child: SizedBox(
                 height: 160.0,
                 width: 180.0,
                 child: Column(
@@ -42,11 +42,11 @@ class DashCategoryWidget extends StatelessWidget {
                   children: [
                     SizedBox(
                       height: 90,
-                      width: MediaQuery.of(context).size.width * 1,
+                      width: double.infinity,
                       child: Tileview(),
                     ),
                     SizedBox(
-                      height: 100,
+                      height: 90,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -58,7 +58,7 @@ class DashCategoryWidget extends StatelessWidget {
                               const SizedBox(width: 3.0),
                               Text("${catItems[index].catExperts}",
                                   style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
+                                      const TextStyle(fontWeight: FontWeight.bold)),
                               const SizedBox(width: 3.0),
                               Text("x"),
                             ],
@@ -85,8 +85,8 @@ class DashCategoryWidget extends StatelessWidget {
                                   color: Colors.black, size: 15.0),
                               SizedBox(width: 3.0),
                               Text("${catItems[index].catJobs}",
-                                  style:
-                                      const TextStyle(fontWeight: FontWeight.bold)),
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold)),
                               SizedBox(width: 3.0),
                               Text("s"),
                             ],

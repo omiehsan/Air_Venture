@@ -50,8 +50,8 @@ class DashCategoryWidgetSeeAll extends StatelessWidget {
                         child: Tileview(),
                       ),
                       SizedBox(
-                        height: 100,
-                        child: Column(
+                        height: 70,
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Row(
