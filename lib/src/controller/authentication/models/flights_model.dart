@@ -52,9 +52,9 @@ class FlightSearchModel {
       toDestination: flightData["To"],
       date: parseDate(flightData["Date"]),
       flightClass: flightData["Class"],
-      duration: '',
-      price: null,
-      airline: '',
+      duration: flightData["Duration"],
+      price: flightData["Price"],
+      airline: flightData["Airline"],
     );
   }
 }
