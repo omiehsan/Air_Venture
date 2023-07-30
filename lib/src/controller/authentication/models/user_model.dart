@@ -1,40 +1,37 @@
-import 'dart:core';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserModel {
   final String? id;
-  final String fullname;
+  final String fullName;
+  final String phone;
   final String email;
-  final String phoneNo;
   final String password;
 
-  const UserModel({
-    this.id,
-    required this.email,
-    required this.password,
-    required this.phoneNo,
-    required this.fullname,
-  });
+  const UserModel(
+      {this.id,
+        required this.fullName,
+        required this.phone,
+        required this.email,
+        required this.password});
 
   toJson() {
     return {
-      "Full Name": fullname,
-      "E-mail": email,
-      "Phone no.": phoneNo,
-      "Password": password
+      "FullName": fullName,
+      "Email": email,
+      "Phone": phone,
+      "Password": password,
     };
   }
 
-  // Step 1 user fetched from Firebase to UserModel
+  factory UserModel.fromDatabase(DocumentSnapshot<Map<String, dynamic>> user) {
+    final userdata = user.data()!;
 
-  factory UserModel.fromSnapshot(
-      DocumentSnapshot<Map<String, dynamic>> document) {
-    final data = document.data()!;
     return UserModel(
-        id: document.id,
-        email: data["Email"],
-        password: data["Password"],
-        phoneNo: data["Phone no."],
-        fullname: data["Full Name"]);
+      id: user.id,
+      fullName: userdata["FullName"],
+      phone: userdata["Phone"],
+      email: userdata["Email"],
+      password: "",
+    );
   }
 }

@@ -1,121 +1,116 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:hawai_jubu/src/controller/authentication/models/user_model.dart';
 import '../../../controller/authentication/controllers/singup_controller.dart';
-import '../../../utils/constaints/styles_colors.dart';
-import '../../../utils/widgets/form/form_field_widget.dart';
+import '../../../controller/authentication/models/user_model.dart';
 
-class SignUpFormWidget extends StatelessWidget {
-  const SignUpFormWidget({
-    super.key,
-  });
+
+class SignUpFormSection extends StatelessWidget {
+  const SignUpFormSection({
+    Key? key,
+  }) : super(key: key);
+
+  static final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    final Controller = Get.put(SignupController());
-    final _formkey = GlobalKey<FormState>();
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 10),
-      child: Form(
-        key: _formkey,
+    final registerController = Get.put(SignUpController());
+
+    return Form(
+      key: _formKey,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 20.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height * 0.085,
-              child: FormFieldWidget(
-                controller: Controller.fullName,
-                prefixIcon: Icons.person_outline_outlined,
-                hintText: "Full name",
-                fillColor: Colors.white60,
-                filled: true,
-                suffixIcon: null, // Pass null explicitly
-              ),
+            TextFormField(
+              controller: registerController.fullName,
+              validator: (value) {
+                // Is Empty Validation
+                if (value == null || value.isEmpty) {
+                  return 'Full Name Is Required!';
+                }
+                // Return Null If Valid
+                return null;
+              },
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.person),
+                  label: Text("Full Name"),
+                  hintText: "Full Name"),
             ),
-            const SizedBox(),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height * 0.085,
-              child: FormFieldWidget(
-                controller: Controller.email,
-                prefixIcon: Icons.email_outlined,
-                hintText: "E-mail",
-                fillColor: Colors.white60,
-                filled: true,
-                suffixIcon: null,
-              ),
+            TextFormField(
+              controller: registerController.email,
+              validator: (value) {
+                // Is Empty Validation
+                if (value == null || value.isEmpty) {
+                  return 'Email Is Required!';
+                }
+                // Email Field Validation
+                if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
+                  return "Please Enter a Valid Email";
+                }
+                // Return Null If Valid
+                return null;
+              },
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.alternate_email),
+                  label: Text('Email'),
+                  hintText: "Email"),
             ),
-            const SizedBox(),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height * 0.085,
-              child: FormFieldWidget(
-                prefixIcon: Icons.phone,
-                hintText: "Phone no.",
-                fillColor: Colors.white60,
-                filled: true,
-                suffixIcon: null,
-                controller: Controller.phoneNo, // Pass null explicitly
-              ),
-            ),
-            const SizedBox(),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height * 0.085,
-              child: FormFieldWidget(
-                prefixIcon: Icons.lock_outline_sharp,
-                hintText: "Password",
-                fillColor: Colors.white60,
-                filled: true,
-                suffixIcon: Icons.remove_red_eye,
-                controller: Controller.password,
-              ),
-            ),
-            const SizedBox(),
 
-            // This is Signup Button and these related stuff
+            TextFormField(
+              controller: registerController.phoneNum,
+              validator: (value) {
+                // Is Empty Validation
+                if (value == null || value.isEmpty) {
+                  return 'Phone Number Is Required!';
+                }
+                if (value.length <= 10) {
+                  return 'Phone Number Must Be of 11 Digit';
+                }
+                // Return Null If Valid
+                return null;
+              },
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.numbers),
+                  label: Text('Phone'),
+                  hintText: "Phone"),
+            ),
+
+            TextFormField(
+              controller: registerController.password,
+              validator: (value) {
+                // Is Empty Validation
+                if (value == null || value.isEmpty) {
+                  return 'Password Is Required!';
+                }
+                // Return Null If Valid
+                return null;
+              },
+              obscureText: true,
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.fingerprint),
+                  label: Text("TTS_Password"),
+                  hintText: "Password"),
+            ),
 
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height * 0.07,
+              width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  if (_formkey.currentState!.validate()) {
-
-
-                    // Email & Password Authentication
-
-                    // SignupController.instance.registerUser(Controller.email.text.trim(), Controller.password.text.trim());
-
-                    // Phone no. Authentication
-
-                    // SignupController.instance.phoneAuthentication(Controller.phoneNo.text.trim());
-
-                    final user = UserModel(
-                        email: Controller.email.text.trim(),
-                        password: Controller.password.text.trim(),
-                        phoneNo: Controller.phoneNo.text.trim(),
-                        fullname: Controller.fullName.text.trim());
-                    SignupController.instance.createUser(user);
-
+                  if (_formKey.currentState!.validate()) {
+                    final userData = UserModel(
+                      id: registerController.email.text.trim(),
+                      fullName: registerController.fullName.text.trim(),
+                      phone: registerController.phoneNum.text.trim(),
+                      email: registerController.email.text.trim(),
+                      password: registerController.password.text.trim(),
+                    );
+                    SignUpController.instance.createUser(userData);
                   }
                 },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black87,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
-                    ),
-                  ),
-                ),
-                child: Text(
-                  "Sign Up",
-                  style: Styles.logintxt,
-                ),
+                child: Text('Register'),
               ),
-            )
+            ),
           ],
         ),
       ),

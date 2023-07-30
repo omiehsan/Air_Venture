@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hawai_jubu/src/controller/authentication/controllers/otp_controller.dart';
 import '../../../utils/constaints/styles_colors.dart';
 import '../../../utils/constaints/texts.dart';
 
@@ -10,7 +8,6 @@ class OtpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var otp;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.brown.shade100,
@@ -22,11 +19,12 @@ class OtpScreen extends StatelessWidget {
               Text(
                 jOtpTitle,
                 style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.bold, fontSize: 70),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 70,
+                ),
               ),
               Text(
                 jOtpSubTitle.toUpperCase(),
-                // style: Theme.of(context.textTheme.headline6),
                 style: Styles.headLineStyle3,
               ),
               SizedBox(
@@ -39,25 +37,12 @@ class OtpScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              OtpTextField(
-                numberOfFields: 6,
-                fillColor: Colors.black.withOpacity(0.1),
-                filled: true,
-                onSubmit: (code) {
-                  otp = code;
-                      // print("Otp is => $code")
-                  OtpController.instance.verifyOtp(otp);
-                },
-              ),
-              SizedBox(
-                height: 30,
-              ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.72,
                 height: MediaQuery.of(context).size.height * 0.060,
                 child: ElevatedButton(
                   onPressed: () {
-                    OtpController.instance.verifyOtp(otp);
+                    // Continue button logic goes here
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black87,

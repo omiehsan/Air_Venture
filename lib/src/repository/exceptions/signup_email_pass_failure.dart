@@ -1,21 +1,27 @@
-class SignupWithEmailAndPassFailure {
-  final String message;
+class createUserEmailPassExceptions {
+  final String errorMessage;
 
-  const SignupWithEmailAndPassFailure([this.message = "An unknown error occurred"]);
+  const createUserEmailPassExceptions([this.errorMessage = "An Unknown Error Occurred!"]);
 
-  factory SignupWithEmailAndPassFailure.code(String code) {
+  factory createUserEmailPassExceptions.code(String code) {
     switch (code) {
       case 'weak-password':
-        return const SignupWithEmailAndPassFailure('Please enter a strong password');
+        return const createUserEmailPassExceptions('Enter Strong Password!');
+
       case 'invalid-email':
-        return const SignupWithEmailAndPassFailure('Email is not valid or badly formatted');
+        return const createUserEmailPassExceptions('Email Not Valid or Badly Formatted');
+
       case 'email-already-in-use':
-        return const SignupWithEmailAndPassFailure('Already exists an account');
+        return const createUserEmailPassExceptions('User Exists w/ This Email');
+
       case 'operation-not-allowed':
-        return const SignupWithEmailAndPassFailure('Operation not allowed, please contact support');
+        return const createUserEmailPassExceptions('Operation Not Allowed. Contact Support');
+
+      case 'user-disabled':
+        return const createUserEmailPassExceptions('Your Account Has Been Disabled! Contact Support');
 
       default:
-        return SignupWithEmailAndPassFailure();
+        return const createUserEmailPassExceptions();
     }
   }
 }

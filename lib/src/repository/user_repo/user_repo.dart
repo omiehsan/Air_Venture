@@ -1,30 +1,50 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hawai_jubu/src/controller/authentication/models/user_model.dart';
+import '../../controller/authentication/models/user_model.dart';
 
-class UserRepository extends GetxService {
-  static UserRepository get instance => Get.find();
+
+class UserRepo extends GetxController {
+  static UserRepo get instance => Get.find();
 
   final _db = FirebaseFirestore.instance;
 
-//  Create User Function Here @ZuTech
-//  Store User in FireStore
-  createUser(UserModel user) async {
+  createUserDoc(UserModel userData) async {
     await _db
         .collection("Users")
-        .add(user.toJson())
+        .doc(userData.id)
+        .set(userData.toJson())
         .whenComplete(
-          () => Get.snackbar("Successful", "Account has been created.",
-              snackPosition: SnackPosition.TOP,
-              backgroundColor: Colors.black.withOpacity(0.2),
-              colorText: Colors.white70),
-        )
+          () => Get.snackbar(
+        "Success:",
+        "Your Account Has Been Created",
+        icon: const Icon(Icons.check_circle, color: Colors.white),
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.blue,
+        borderRadius: 10,
+        margin: const EdgeInsets.all(15),
+        colorText: Colors.white,
+        duration: const Duration(seconds: 10),
+        isDismissible: true,
+        dismissDirection: DismissDirection.horizontal,
+        forwardAnimationCurve: Curves.easeOutBack,
+      ),
+    )
         .catchError((error, stackTrace) {
-      Get.snackbar("Error", "Something went Wrong, try again!!",
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.black.withOpacity(0.2),
-          colorText: Colors.white70);
+      Get.snackbar(
+        "Error:",
+        "Something Went Wrong! Try Again",
+        icon: const Icon(Icons.error_outline_sharp, color: Colors.white),
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.red,
+        borderRadius: 10,
+        margin: const EdgeInsets.all(15),
+        colorText: Colors.white,
+        duration: const Duration(seconds: 10),
+        isDismissible: true,
+        dismissDirection: DismissDirection.horizontal,
+        forwardAnimationCurve: Curves.easeOutBack,
+      );
       print(error.toString());
     });
   }
@@ -32,14 +52,26 @@ class UserRepository extends GetxService {
   // Fetch User Details
   Future<UserModel> getUserDetails(String email) async {
     final snapshot = await _db.collection("Users").where("Email", isEqualTo: email).get();
-    final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).single;
+    final userData = snapshot.docs.map((user) => UserModel.fromDatabase(user)).single;
     return userData;
   }
 
-  // Store UserList
-  Future<List<UserModel>> allUser() async {
-    final snapshot = await _db.collection("Users").get();
-    final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).toList();
+  // Fetch User Name
+  Future<UserModel> getUserName(String email) async {
+    final snapshot = await _db.collection("Users").where("Email", isEqualTo: email).get();
+    final userData = snapshot.docs.map((user) => UserModel.fromDatabase(user)).single;
     return userData;
+  }
+
+  // Fetch All Users
+  Future<List<UserModel>> getAllUsers() async {
+    final snapshot = await _db.collection("Users").get();
+    final userData = snapshot.docs.map((user) => UserModel.fromDatabase(user)).toList();
+    return userData;
+  }
+
+  // Update User Records
+  Future<void> updateUserRecord(UserModel user) async {
+    await _db.collection("Users").doc(user.id).update(user.toJson());
   }
 }

@@ -8,10 +8,10 @@ import 'package:hawai_jubu/src/view/_screen/splash_screen/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Get.put(OtpController());
+  // Get.put(OtpController());
 
   Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-      .then((value) => Get.put(AuthenticationRepository()));
+      .then((value) => Get.put(AuthRepo()));
   runApp(const MyApp());
 }
 

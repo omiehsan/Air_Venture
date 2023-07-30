@@ -1,23 +1,33 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hawai_jubu/src/repository/auth_repo/auth_repo.dart';
-import 'package:hawai_jubu/src/repository/user_repo/user_repo.dart';
+
+import '../../../repository/auth_repo/auth_repo.dart';
+import '../../../repository/user_repo/user_repo.dart';
+import '../models/user_model.dart';
 
 class ProfileController extends GetxController {
   static ProfileController get instance => Get.find();
-  final _authRepo = Get.put(AuthenticationRepository());
-  final _userRepo = Get.put(UserRepository());
+// Controllers
 
 
-  // Get User email & pass to userRepo to fetch userData
+  final _authRepo = Get.put(AuthRepo());
+  final _userRepo = Get.put(UserRepo());
 
   getUserData() {
-    final email = _authRepo.firebaseUser.value?.email;
-    print("email : $email");
-    if (email != null) {
-      print("email is not null : $email");
-      return _userRepo.getUserDetails(email);
-    } else{
-      Get.snackbar("Error", "Login to continue");
+    final _userEmail = _authRepo.firebaseUser.value?.email;
+    if (_userEmail != null) {
+      return _userRepo.getUserDetails(_userEmail);
+    } else {
+      Get.snackbar("Error", "Login To Continue...");
     }
+  }
+
+  getAllUsers() {
+    return _userRepo.getAllUsers();
+
+
+  }
+  updateRecord(UserModel user) async{
+    await _userRepo.updateUserRecord(user);
   }
 }

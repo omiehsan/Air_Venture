@@ -84,7 +84,7 @@ class UpdateProfile extends StatelessWidget {
                               ListTile(
                                 title: SizedBox(
                                   child: TextFormField(
-                                    initialValue: userData.fullname,
+                                    initialValue: userData.fullName,
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
                                           borderRadius:
@@ -134,7 +134,7 @@ class UpdateProfile extends StatelessWidget {
                               ListTile(
                                 title: SizedBox(
                                   child: TextFormField(
-              initialValue: userData.phoneNo,
+              initialValue: userData.phone,
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(
                                           borderRadius:

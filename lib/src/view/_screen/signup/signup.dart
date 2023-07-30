@@ -22,7 +22,7 @@ class SignUpScreen extends StatelessWidget {
                   title: "Hello!",
                   subtitle: "Create an account to explore your journey.",
                 ),
-                SignUpFormWidget(),
+                SignUpFormSection(),
                 SignUpItemWidget(),
                 SignUpBottomWidget(),
               ],
