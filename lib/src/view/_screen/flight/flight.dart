@@ -32,9 +32,9 @@ class FlightResult extends StatelessWidget {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("From"),
-                    Text("From"),
+                  children: const [
+                    Text("Dhaka"),
+                    Text("Chittagong"),
                   ],
                 ),
                 SizedBox(height: 10),
@@ -55,14 +55,14 @@ class FlightResult extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 image: const DecorationImage(
-                                  fit: BoxFit.fitHeight,
+                                  fit: BoxFit.fill,
                                   image: AssetImage("assets/images/img_1.png"),
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(width: 15),
+                        SizedBox(width: 10),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +73,13 @@ class FlightResult extends StatelessWidget {
                                   fontSize: 13, fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              "BBDA-189",
+                              "BDA-189",
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                              ),
+                            ),
+                            Text(
+                              "Economy",
                               style: GoogleFonts.poppins(
                                 fontSize: 12,
                               ),
@@ -86,22 +92,21 @@ class FlightResult extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // const Text(
-                        //   "11 Jun 2023",
-                        //   style: GoogleFonts.poppins(
-                        //     fontWeight: FontWeight.bold,
-                        //   ),
-                        // ),
                         Text(
-                          " \$400",
+                          "11 Jun 2023",
                           style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.normal,
                           ),
                         ),
                         Text(
-                          "Economy",
+                          " \$400",
                           style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.bold, color: Colors.green),
+                        ),
+                        Text(
+                          "Duration",
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.normal,
                           ),
                         ),
                       ],
