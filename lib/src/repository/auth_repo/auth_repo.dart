@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hawai_jubu/src/view/_screen/splash_screen/splash_screen.dart';
 import 'package:hawai_jubu/src/view/navigations/navigation_bar/bottom_bar.dart';
-
 import '../exceptions/login_email_pass_exceptions.dart';
 import '../exceptions/signup_email_pass_failure.dart';
 

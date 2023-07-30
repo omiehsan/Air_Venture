@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FlightSearchModel {
   String? id;
-  String? duration;
-  String? airline;
-  num? price;
+  final String? duration;
+  final String? airline;
+  final num? price;
   final String fromDestination;
   final String toDestination;
   final String flightClass;
@@ -16,9 +16,9 @@ class FlightSearchModel {
     required this.toDestination,
     required this.date,
     required this.flightClass,
-    this.duration,
-    this.price,
-    this.airline,
+    required this.duration,
+    required this.price,
+    required this.airline,
   });
 
   toJson() {
@@ -52,6 +52,9 @@ class FlightSearchModel {
       toDestination: flightData["To"],
       date: parseDate(flightData["Date"]),
       flightClass: flightData["Class"],
+      duration: '',
+      price: null,
+      airline: '',
     );
   }
 }

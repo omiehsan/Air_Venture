@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:hawai_jubu/src/view/navigations/search_bar/dropdown.dart';
 import '../../../utils/constaints/styles_colors.dart';
 
 
@@ -163,41 +164,42 @@ class _SearchBoxsState extends State<SearchBoxs> {
               ),
             ),
           ),
-          ListTile(
-            title: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.06,
-              child: InkWell(
-                onTap: () {},
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.black26,
-                  ),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 10,
-                  ),
-                  child: Row(
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
-                        child: Icon(
-                          Icons.supervisor_account,
-                          color: Colors.white70,
-                        ),
-                      ),
-                      Text(
-                        'Traveller',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // ListTile(
+          //   title: SizedBox(
+          //     height: MediaQuery.of(context).size.height * 0.06,
+          //     child: InkWell(
+          //       onTap: () {},
+          //       child: Container(
+          //         decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.circular(5),
+          //           color: Colors.black26,
+          //         ),
+          //         padding: const EdgeInsets.symmetric(
+          //           horizontal: 12,
+          //           vertical: 10,
+          //         ),
+          //         child: Row(
+          //           children: const [
+          //             Padding(
+          //               padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+          //               child: Icon(
+          //                 Icons.supervisor_account,
+          //                 color: Colors.white70,
+          //               ),
+          //             ),
+          //             Text(
+          //               'Traveller',
+          //               style: TextStyle(
+          //                 color: Colors.white,
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          MyListTileWithDropdown(),
           const SizedBox(height: 5),
           Center(
             child: Container(
