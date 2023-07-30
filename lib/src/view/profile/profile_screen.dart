@@ -8,6 +8,7 @@ import 'package:hawai_jubu/src/view/profile/profile_widget.dart';
 import 'package:hawai_jubu/src/view/profile/update_profile.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
+import '../../repository/auth_repo/auth_repo.dart';
 import '../../view/navigations/navigation_bar/bottom_bar.dart';
 import '../_screen/flight/flight.dart';
 
@@ -264,7 +265,9 @@ class ProfileScreen extends StatelessWidget {
                   ListTile(
                     title: const Align(
                         alignment: Alignment.center, child: Text("Log out")),
-                    onTap: () {},
+                      onTap: () {
+                        AuthRepo.instance.logOut();
+                      },
                     tileColor: Colors.white,
                   ),
                   const SizedBox(
