@@ -28,31 +28,51 @@ class DestinationListPage extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 child: Padding(
                   padding: EdgeInsets.all(16),
-                  child: Column(
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        destination['To'],
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'From',
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              destination['From'],
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Airline: ${destination['Airline']}',
-                        style: TextStyle(fontSize: 14),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'To',
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              destination['To'],
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
                       ),
-                      Text(
-                        'Class: ${destination['Class']}',
-                        style: TextStyle(fontSize: 14),
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      SizedBox(width: 16),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
                             // Format the date using intl package
                             'Date: ${formatDate(destination['Date'])}',
                             style: TextStyle(fontSize: 14),
                           ),
+                          SizedBox(height: 4),
                           Text(
                             '\$${destination['Price']}',
                             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green),
@@ -73,7 +93,7 @@ class DestinationListPage extends StatelessWidget {
   String formatDate(Timestamp? timestamp) {
     if (timestamp == null) return 'Unknown';
     var date = timestamp.toDate();
-    var formatter = DateFormat('dd-MM-yy');
+    var formatter = DateFormat('ddMMyy');
     return formatter.format(date);
   }
 }
