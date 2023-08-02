@@ -1,16 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hawai_jubu/src/controller/authentication/models/flights_model.dart';
 
 class FlightResult extends StatelessWidget {
-  const FlightResult({Key? key}) : super(key: key);
+  const FlightResult({Key? key, required List<FlightSearchModel> searchResults}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading:
-            IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+            IconButton(onPressed: () => Get.back(), icon: const Icon(Icons.arrow_back)),
         title: const Text("Flights"),
         flexibleSpace: Container(
           // Add a flexibleSpace to set the gradient background

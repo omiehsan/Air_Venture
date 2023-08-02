@@ -50,13 +50,9 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
-
-
-
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             // Cover Section of profile includes (profile image,name,edit profile)
 
             Material(
@@ -74,8 +70,7 @@ class ProfileScreen extends StatelessWidget {
                         Colors.black.withOpacity(0.4), BlendMode.dstATop),
                   ),
                 ),
-                child:
-                    Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -90,15 +85,16 @@ class ProfileScreen extends StatelessWidget {
                               height: 90,
                               child: Container(
                                 decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 3, color: Colors.orange),
+                                  border: Border.all(
+                                      width: 3, color: Colors.orange),
                                   borderRadius: BorderRadius.circular(16),
                                   shape: BoxShape.rectangle,
                                 ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(14),
                                   child: const Image(
-                                    image: NetworkImage("https://source.unsplash.com/random/200x200/?face"),
+                                    image: NetworkImage(
+                                        "https://source.unsplash.com/random/200x200/?face"),
                                     height: 100,
                                     width: 100,
                                   ),
@@ -127,7 +123,6 @@ class ProfileScreen extends StatelessWidget {
                         const SizedBox(
                           height: 5,
                         ),
-
                         Text(
                           " Tashrif Jubaer",
                           style: GoogleFonts.montserrat(
@@ -138,7 +133,7 @@ class ProfileScreen extends StatelessWidget {
                       ],
                     ),
                     FloatingActionButton(
-                      onPressed: () =>Get.to(()=> const UpdateProfile()),
+                      onPressed: () => Get.to(() => const UpdateProfile()),
                       backgroundColor: Colors.orange,
                       mini: true,
                       child: const Icon(Icons.manage_accounts_rounded),
@@ -165,9 +160,10 @@ class ProfileScreen extends StatelessWidget {
                             onTap: () {}),
                         SizedBox(),
                         ProfileWidget(
-                            title: "My Trips",
-                            icon: Icons.travel_explore,
-                            onTap: () => Get.to(()=>FlightResult()),),
+                          title: "My Trips",
+                          icon: Icons.travel_explore,
+                          onTap: () {},
+                        ),
                       ],
                     ),
                   ),
@@ -204,15 +200,13 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.only(
-                        right: 10, bottom: 15, left: 10),
+                    padding:
+                        const EdgeInsets.only(right: 10, bottom: 15, left: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ProfileWidget(
-                            title: "Saved",
-                            icon: Icons.bookmark,
-                            onTap: () {}),
+                            title: "Saved", icon: Icons.bookmark, onTap: () {}),
                         const SizedBox(),
                         ProfileWidget(
                             title: "Add Card",
@@ -265,9 +259,9 @@ class ProfileScreen extends StatelessWidget {
                   ListTile(
                     title: const Align(
                         alignment: Alignment.center, child: Text("Log out")),
-                      onTap: () {
-                        AuthRepo.instance.logOut();
-                      },
+                    onTap: () {
+                      AuthRepo.instance.logOut();
+                    },
                     tileColor: Colors.white,
                   ),
                   const SizedBox(

@@ -1,66 +1,3 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
-//
-// class FlightSearchModel {
-//   String? id;
-//   final String? duration;
-//   final String? airline;
-//   final num? price;
-//   final String fromDestination;
-//   final String toDestination;
-//   final String flightClass;
-//   final DateTime date;
-//
-//   FlightSearchModel({
-//     this.id,
-//     required this.fromDestination,
-//     required this.toDestination,
-//     required this.date,
-//     required this.flightClass,
-//     required this.duration,
-//     required this.price,
-//     required this.airline,
-//   });
-//
-//   toJson() {
-//     return {
-//       "From": fromDestination,
-//       "To": toDestination,
-//       "Class": flightClass,
-//       "Duration": duration,
-//       "Price": price,
-//       "Airline": airline,
-//       "Date": date,
-//     };
-//   }
-//
-//   factory FlightSearchModel.fromDatabase(
-//       DocumentSnapshot<Map<String, dynamic>> document) {
-//     final flightData = document.data()!;
-//
-//     parseDate(data) {
-//       if (data == null || data == "") {
-//         return DateTime.parse("2023-03-12T18:42:49.608466Z");
-//       } else {
-//         final timeToMS = data.millisecondsSinceEpoch;
-//         return DateTime.fromMillisecondsSinceEpoch(timeToMS);
-//       }
-//     }
-//
-//     return FlightSearchModel(
-//       id: document.id,
-//       fromDestination: flightData["From"],
-//       toDestination: flightData["To"],
-//       date: parseDate(flightData["Date"]),
-//       flightClass: flightData["Class"],
-//       duration: flightData["Duration"],
-//       price: flightData["Price"],
-//       airline: flightData["Airline"],
-//     );
-//   }
-// }
-
-
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FlightSearchModel {
@@ -85,6 +22,7 @@ class FlightSearchModel {
   });
 
   // Factory method to create a FlightSearchModel from a Firestore DocumentSnapshot
+  
   factory FlightSearchModel.fromSnapshot(DocumentSnapshot snapshot) {
     final data = snapshot.data() as Map<String, dynamic>;
     return FlightSearchModel(
@@ -120,7 +58,7 @@ Future<List<FlightSearchModel>> searchFlights(
     DateTime date,
     ) async {
   final firestore = FirebaseFirestore.instance;
-  final flightCollection = firestore.collection('flights');
+  final flightCollection = firestore.collection('Destination');
 
   try {
     // Perform the search query using where clauses to filter the data
