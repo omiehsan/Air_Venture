@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/services/recommended/recommended_models.dart';
+import 'package:hawai_jubu/src/view/_screen/forget_password/forgetpassword_text.dart';
 
 class RecommendedFlightsWidgets extends StatefulWidget {
   const RecommendedFlightsWidgets({Key? key}) : super(key: key);
@@ -30,8 +33,9 @@ class _RecommendedFlightsWidgetsState extends State<RecommendedFlightsWidgets> {
         // shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => GestureDetector(
-          onTap: (recoItem[index].onPress),
-          child: Container(
+          onTap: (){
+      Get.to(ForgetPasswordTextScreen());},
+            child: Container(
             margin: const EdgeInsets.all(5),
             child: Card(
               elevation: 5,
