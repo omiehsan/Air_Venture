@@ -17,7 +17,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       leading: IconButton(
         onPressed: onTap,
-        icon: const Icon(Icons.arrow_back),
+        icon: const Icon(Icons.arrow_back_ios_new),
       ),
       title: Text(title,textAlign: TextAlign.center),
       centerTitle: true,

@@ -30,7 +30,7 @@ class _RecommendedFlightsWidgetsState extends State<RecommendedFlightsWidgets> {
         // shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => GestureDetector(
-          onTap: (recoItem[index].onPress),
+          onTap: (){},
           child: Container(
             margin: const EdgeInsets.all(5),
             child: Card(

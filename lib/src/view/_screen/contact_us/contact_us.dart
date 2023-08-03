@@ -5,8 +5,6 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../../services/payment_card/add_card.dart';
 import 'booking_issues.dart';
 
-
-
 class ContactUs extends StatelessWidget {
   const ContactUs({Key? key}) : super(key: key);
 
@@ -14,13 +12,9 @@ class ContactUs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded),
-          onPressed: ()=> Get.back(),
-        ),
         title: const Text("Contact Us"),
+        centerTitle: true,
         flexibleSpace: Container(
-          // Add a flexibleSpace to set the gradient background
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
@@ -37,24 +31,6 @@ class ContactUs extends StatelessWidget {
           children: [
             const Padding(
               padding: EdgeInsets.all(15),
-            ),
-            ListTile(
-              contentPadding:
-                  const EdgeInsets.only(left: 10, top: 5, right: 10),
-              title: const Text("Need help with recent bookings? "),
-              subtitle: TextButton(
-                onPressed: () {},
-                child: const Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text(
-                    "Login now >",
-                  ),
-                ),
-              ),
-              tileColor: Colors.white,
-            ),
-            const SizedBox(
-              height: 25,
             ),
             const ListTile(
               leading: CircleAvatar(
@@ -77,7 +53,7 @@ class ContactUs extends StatelessWidget {
             ListTile(
               leading: const CircleAvatar(
                 radius: 16,
-                backgroundColor: Color(0xb5fc8a28),
+                backgroundColor: Colors.black12,
                 child: Icon(
                   Icons.card_travel,
                   size: 20,
@@ -103,7 +79,7 @@ class ContactUs extends StatelessWidget {
             ListTile(
               leading: const CircleAvatar(
                 radius: 16,
-                backgroundColor: Color(0xb5fc8a28),
+                backgroundColor: Colors.black12,
                 child: Icon(
                   Icons.manage_accounts,
                   size: 20,
@@ -122,7 +98,7 @@ class ContactUs extends StatelessWidget {
             ListTile(
               leading: const CircleAvatar(
                 radius: 16,
-                backgroundColor: Color(0xb5fc8a28),
+                backgroundColor: Colors.black12,
                 child: Icon(
                   Icons.generating_tokens,
                   size: 20,
@@ -142,7 +118,7 @@ class ContactUs extends StatelessWidget {
             ListTile(
               leading: const CircleAvatar(
                 radius: 16,
-                backgroundColor: Color(0xb5fc8a28),
+                backgroundColor: Colors.black12,
                 child: Icon(
                   Icons.search,
                   size: 20,
@@ -162,7 +138,7 @@ class ContactUs extends StatelessWidget {
             ListTile(
               leading: const CircleAvatar(
                 radius: 16,
-                backgroundColor: Color(0xb5fc8a28),
+                backgroundColor: Colors.black12,
                 child: Icon(
                   Icons.health_and_safety,
                   size: 20,
@@ -181,7 +157,7 @@ class ContactUs extends StatelessWidget {
             ListTile(
               leading: const CircleAvatar(
                 radius: 16,
-                backgroundColor: Color(0xb5fc8a28),
+                backgroundColor: Colors.black12,
                 child: Icon(
                   Icons.help,
                   size: 20,
@@ -200,7 +176,7 @@ class ContactUs extends StatelessWidget {
             ListTile(
               leading: const CircleAvatar(
                 radius: 16,
-                backgroundColor: Color(0xb5fc8a28),
+                backgroundColor: Colors.black12,
                 child: Icon(
                   Icons.currency_exchange,
                   size: 20,

@@ -6,7 +6,6 @@ import 'package:hawai_jubu/src/services/category_all/category_seeall.dart';
 import 'package:hawai_jubu/src/services/ticket/ticket_view.dart';
 import 'package:hawai_jubu/src/utils/constaints/images.dart';
 import 'package:hawai_jubu/src/utils/constaints/texts.dart';
-import 'package:hawai_jubu/src/view/_screen/flight/flight.dart';
 import 'package:lottie/lottie.dart';
 import '../../../services/best_deals/category_widgets.dart';
 import '../../../services/recommended/recommended_widget.dart';
@@ -25,20 +24,13 @@ class DashBoard extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        //   leading: Image.asset(
-        //     jSplashIcon,
-        //     // width: MediaQuery.of(context).size.width * 0.5,
-        //     // height: MediaQuery.of(context).size.height * 0.5,alignment:Alignment.center ,
-        // ),
         title: Align(
           alignment: Alignment.centerLeft,
           child: Image.asset(
             jSplashLogo,
             width: MediaQuery.of(context).size.width * 0.50,
-            // height: MediaQuery.of(context).size.height *0.40,
           ),
         ),
-
         actions: [
           IconButton(
             icon: const Icon(
@@ -119,34 +111,9 @@ class DashBoard extends StatelessWidget {
               ),
             ),
             DashCategoryWidget(textTheme: Typography.blackCupertino),
-            Padding(
-              padding:
-                  const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      jDashPopular,
-                      style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    TextButton(
-                      child: Text(jDashSeeall,
-                          style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 17,
-                            decoration: TextDecoration.underline,
-                            color: Colors.deepOrange,
-                          )),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            DashCategoryWidget(textTheme: Typography.blackCupertino),
+
+            //
+
             Padding(
               padding:
                   const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
@@ -176,6 +143,8 @@ class DashBoard extends StatelessWidget {
               ),
             ),
             DashCategoryWidget(textTheme: Typography.blackCupertino),
+
+
             Padding(
               padding:
                   const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
@@ -207,7 +176,6 @@ class DashBoard extends StatelessWidget {
             ),
             const RecommendedFlightsWidgets(),
             const TicketView(),
-
           ],
         ),
       ),

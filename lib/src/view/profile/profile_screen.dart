@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hawai_jubu/src/view/_screen/flight/flight_result.dart';
+import 'package:hawai_jubu/src/view/flights/destination_list.dart';
 import 'package:hawai_jubu/src/view/profile/profile_widget.dart';
 import 'package:hawai_jubu/src/view/profile/update_profile.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
@@ -162,7 +164,7 @@ class ProfileScreen extends StatelessWidget {
                         ProfileWidget(
                           title: "My Trips",
                           icon: Icons.travel_explore,
-                          onTap: () {},
+                          onTap:  () => Get.to(() => DestinationListPage()),
                         ),
                       ],
                     ),

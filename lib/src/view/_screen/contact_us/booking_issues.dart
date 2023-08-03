@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../utils/constaints/styles_colors.dart';
 import '../../navigations/navigation_bar/top_bar.dart';
-import 'contact_us.dart';
+import 'package:get/get.dart';
 
 
 class IssuesBooking extends StatelessWidget {
@@ -15,14 +15,7 @@ class IssuesBooking extends StatelessWidget {
       appBar: TopBar(
         title: 'Issues with Booking',
         icon: Icons.account_circle,
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ContactUs(),
-            ),
-          );
-        },
+        onTap: () => Get.back(),
       ),
       body: Center(
         child: SizedBox(

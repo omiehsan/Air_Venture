@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../contact_us/booking_issues.dart';
-import '../more_views/more_view.dart';
+import 'package:get/get.dart';
 
 class CustomerServices extends StatelessWidget {
   const CustomerServices({Key? key}) : super(key: key);
@@ -9,13 +9,10 @@ class CustomerServices extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:  IconButton( onPressed: () {
-          Navigator.push(context,MaterialPageRoute(builder: (context) => MoreView(),
-          ));
-        }, icon: Icon(Icons.arrow_back_rounded)),
+        leading:  IconButton( onPressed: () => Get.back(),
+         icon: Icon(Icons.arrow_back_rounded)),
         title: const Text("Customer Services"),
         flexibleSpace: Container(
-          // Add a flexibleSpace to set the gradient background
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,

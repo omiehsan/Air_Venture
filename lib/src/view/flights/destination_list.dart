@@ -13,7 +13,7 @@ class DestinationListPage extends StatelessWidget {
         stream: FirebaseFirestore.instance.collection('Destination').snapshots(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
           if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));

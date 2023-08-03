@@ -22,7 +22,7 @@ class FlightSearchModel {
   });
 
   // Factory method to create a FlightSearchModel from a Firestore DocumentSnapshot
-  
+
   factory FlightSearchModel.fromSnapshot(DocumentSnapshot snapshot) {
     final data = snapshot.data() as Map<String, dynamic>;
     return FlightSearchModel(

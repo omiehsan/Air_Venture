@@ -85,7 +85,7 @@ class DashRecommendedModels {
         jHiltonKualaLumpurType,
         jHiltonKualaLumpurTitle,
         jHiltonKualaLumpurView,
-        jHiltonKualaLumpurLoc, null)
+        jHiltonKualaLumpurLoc, (){})
 
 
   ];
