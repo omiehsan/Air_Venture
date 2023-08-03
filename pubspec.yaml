@@ -69,6 +69,15 @@ flutter:
     - assets/
     - assets/images/
     - assets/images/hotels/
+    - assets/images/hotels/hilton_kuala_lumpur/
+    - assets/images/hotels/marina_bay_sands/
+    - assets/images/hotels/raffle_the_palm/
+    - assets/images/hotels/taj_palace/
+    - assets/images/hotels/the_oberoi_grand/
+    - assets/images/hotels/nirvana_inn/
+    - assets/images/hotels/hotel_coxs_today/
+    - assets/images/hotels/best_west_heritage/
+    - assets/images/hotels/hotel_sheraton/
     - assets/images/logo/
     - assets/images/icon/
     - assets/images/banners/

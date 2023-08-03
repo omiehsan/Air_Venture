@@ -1,14 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../repository/auth_repo/auth_repo.dart';
 import '../../../repository/user_repo/user_repo.dart';
 import '../models/user_model.dart';
 
 class ProfileController extends GetxController {
   static ProfileController get instance => Get.find();
-// Controllers
 
+// Controllers
 
   final _authRepo = Get.put(AuthRepo());
   final _userRepo = Get.put(UserRepo());

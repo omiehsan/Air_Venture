@@ -69,7 +69,7 @@ class DestinationListPage extends StatelessWidget {
                         children: [
                           Text(
                             // Format the date using intl package
-                            'Date: ${formatDate(destination['Date'])}',
+                            '${formatDate(destination['Date'])}',
                             style: TextStyle(fontSize: 14),
                           ),
                           SizedBox(height: 4),
@@ -93,7 +93,7 @@ class DestinationListPage extends StatelessWidget {
   String formatDate(Timestamp? timestamp) {
     if (timestamp == null) return 'Unknown';
     var date = timestamp.toDate();
-    var formatter = DateFormat('ddMMyy');
+    var formatter = DateFormat('dd/MM/yy');
     return formatter.format(date);
   }
 }

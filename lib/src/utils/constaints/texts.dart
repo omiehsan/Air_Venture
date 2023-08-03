@@ -6,6 +6,8 @@ const String TTS_TagLine = "You Just Pass. \nWe Handle The Rest";
 
 // Dashboard Screen Text
 const String jDashPopular="Popular Flights";
+const String jHotelsForYou="Hotels For You";
+
  const String jDashSeeall="See all";
 // const String =;
 // const String =;

@@ -185,7 +185,7 @@ class DashBoard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      jDashPopular,
+                      jHotelsForYou,
                       style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.bold, fontSize: 18),
                     ),
