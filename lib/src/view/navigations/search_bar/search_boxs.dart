@@ -41,16 +41,16 @@ class _SearchBoxsState extends State<SearchBoxs> {
   }
 
   void onSearchPressed() async {
-    String fromDestination = ""; // Get the value from the From text field.
-    String toDestination = "";   // Get the value from the To text field.
-    DateTime date = _dateTime;
+    String fromDestination = "Dhaka"; // Get the value from the From text field.
+    String toDestination = "Chittagong";   // Get the value from the To text field.
+    // DateTime date = _dateTime;
 
     try {
       final querySnapshot = await FirebaseFirestore.instance
-          .collection('flights')
+          .collection('Destination')
           .where('From', isEqualTo: fromDestination)
           .where('To', isEqualTo: toDestination)
-          .where('Date', isEqualTo: date)
+          // .where('Date', isEqualTo: date)
           .get();
 
       print('Query executed successfully!');
@@ -94,51 +94,51 @@ class _SearchBoxsState extends State<SearchBoxs> {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              children: [
-                ElevatedButton(
-                  onPressed: onTap,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        isClicked ? Colors.white70 : Colors.black12,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                  ),
-                  child: const Text(
-                    ' One Way ',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 8,
-                ),
-                ElevatedButton(
-                  onPressed: onTap,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        isClicked ? Colors.black12 : Colors.white70,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  child: const Text(
-                    'Round Trip',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // Container(
+          //   padding: const EdgeInsets.symmetric(horizontal: 15),
+          //   child: Row(
+          //     children: [
+          //       ElevatedButton(
+          //         onPressed: onTap,
+          //         style: ElevatedButton.styleFrom(
+          //           backgroundColor:
+          //               isClicked ? Colors.white70 : Colors.black12,
+          //           shape: RoundedRectangleBorder(
+          //               borderRadius: BorderRadius.circular(10)),
+          //         ),
+          //         child: const Text(
+          //           ' One Way ',
+          //           style: TextStyle(
+          //             fontSize: 16,
+          //             fontWeight: FontWeight.bold,
+          //             color: Colors.white,
+          //           ),
+          //         ),
+          //       ),
+          //       const SizedBox(
+          //         width: 8,
+          //       ),
+          //       ElevatedButton(
+          //         onPressed: onTap,
+          //         style: ElevatedButton.styleFrom(
+          //           backgroundColor:
+          //               isClicked ? Colors.black12 : Colors.white70,
+          //           shape: RoundedRectangleBorder(
+          //             borderRadius: BorderRadius.circular(10),
+          //           ),
+          //         ),
+          //         child: const Text(
+          //           'Round Trip',
+          //           style: TextStyle(
+          //             fontSize: 16,
+          //             fontWeight: FontWeight.bold,
+          //             color: Colors.black,
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           const SizedBox(height: 5),
           ListTile(
             title: SizedBox(
@@ -227,7 +227,8 @@ class _SearchBoxsState extends State<SearchBoxs> {
                 ),
               ),
               child: ElevatedButton(
-                onPressed: () => Get.to(() =>  Flight_Result(searchResults: [],)),
+                onPressed: () => onSearchPressed(),
+                    // Get.to(() =>  Flight_Result(searchResults: [],)),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                   shape: RoundedRectangleBorder(

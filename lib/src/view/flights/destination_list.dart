@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:intl/intl.dart'; // Import the intl package
+import 'package:intl/intl.dart';// Import the intl package
 
 class DestinationListPage extends StatelessWidget {
   @override

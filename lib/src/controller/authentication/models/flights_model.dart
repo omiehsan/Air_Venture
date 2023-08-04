@@ -4,7 +4,7 @@ class FlightSearchModel {
   String? id;
   String? duration;
   String? airline;
-  num? price;
+  var price;
   final String fromDestination;
   final String toDestination;
   final String flightClass;
