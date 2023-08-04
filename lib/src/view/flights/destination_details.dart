@@ -1,29 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:intl/intl.dart';
+import '../../controller/authentication/models/flights_model.dart'; // Import the FlightSearchModel
 
 class DestinationDetailsPage extends StatelessWidget {
-  final DocumentSnapshot destination;
+  final FlightSearchModel flight;
 
-  DestinationDetailsPage({required this.destination});
+  DestinationDetailsPage({required this.flight});
 
   @override
   Widget build(BuildContext context) {
+    final formattedDate = DateFormat('dd/MM/yy').format(flight.date);
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Destination Details'),
+        title: Text('Flight Details'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Destination: ${destination['To']}'),
-            Text('Airline: ${destination['Airline']}'),
-            Text('Class: ${destination['Class']}'),
-            Text('Date: ${destination['Date']}'),
-            Text('Duration: ${destination['Duration']}'),
-            Text('From: ${destination['From']}'),
-            Text('Price: \$${destination['Price']}'),
+            Text('Airline: ${flight.airline}'),
+            SizedBox(height: 8),
+            Text('Price: \$${flight.price}'),
+            SizedBox(height: 8),
+            Text('From Destination: ${flight.fromDestination}'),
+            SizedBox(height: 8),
+            Text('Date: $formattedDate'),
+            SizedBox(height: 8),
+            Text('To Destination: ${flight.toDestination}'),
+            SizedBox(height: 8),
+            Text('Duration: ${flight.duration}'),
+            SizedBox(height: 8),
+            Text('Flight Class: ${flight.flightClass}'),
+            // Display other flight details here as needed.
           ],
         ),
       ),
