@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/services/recommended/recommend.dart';
 import 'package:hawai_jubu/src/services/recommended/recommended_models.dart';
+import 'package:hawai_jubu/src/utils/widgets/bottomsheet_category/btmsht_cat.dart';
 
 class RecommendedFlightsWidgets extends StatefulWidget {
   const RecommendedFlightsWidgets({Key? key}) : super(key: key);
@@ -33,128 +34,7 @@ class _RecommendedFlightsWidgetsState extends State<RecommendedFlightsWidgets> {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
-            showModalBottomSheet(
-              context: context,
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-              ),
-              
-              builder: (context) => Container(
-                // height: MediaQuery.of(context.size.height*0.7),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                      ),
-                      child: Image.asset(
-                        jLeMeridianView,
-                        fit: BoxFit.cover,
-                        height: MediaQuery.of(context).size.height * 0.22,
-                        width: double.infinity,
-                      ),
-                    ),
-                    //about places
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Text(
-                        "About",
-                        style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 12.0,left: 10,right: 10,bottom: 8),
-                      child: Text(
-                        "Aboutfgdtjgfhdsfstystrsyyjrtyrrgfdgtgdffy",
-                        maxLines: 3,
-                        style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.normal, fontSize: 14),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 5),
-                      child: Text(
-                        "Photos",
-                        style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius:  BorderRadius.circular(10),
-                            child: Image.asset(
-                              jLeMeridianView,
-                              fit: BoxFit.fill,
-                              height: 55,
-                              width: 55,
-                            ),
-                          ),
-                          SizedBox(width: 20,),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              jLeMeridianView,
-                              fit: BoxFit.fill,
-                              height: 55,
-                              width: 55,
-                            ),
-                          ),
-                          SizedBox(width: 20,),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              jLeMeridianView,
-                              fit: BoxFit.fill,
-                              height: 55,
-                              width: 55,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 5),
-                      child: Text(
-                        "Attraction",
-                        style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Container (
-                          padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 5.0),
-                          child:  Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Icon(FontAwesomeIcons.hashtag),
-                              SizedBox(width: 5,),
-                              Text("gfshxjsfx"),
-                              SizedBox(width: 10,),
-                              Icon(FontAwesomeIcons.hashtag),
-                              SizedBox(width: 5,),
-                              Text("gfshxjsfx"),
-                            ],
-                          ),
-
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            );
-            // Get.to(ForgetPasswordTextScreen());
+            CategorySheet.buildShowModalBottomSheet(context);
           },
           child: Card(
             elevation: 5,
@@ -253,4 +133,6 @@ class _RecommendedFlightsWidgetsState extends State<RecommendedFlightsWidgets> {
       ),
     );
   }
+
+
 }

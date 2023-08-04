@@ -4,15 +4,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hawai_jubu/src/view/_screen/flight/flight_result.dart';
 import 'package:hawai_jubu/src/view/flights/destination_list.dart';
 import 'package:hawai_jubu/src/view/profile/profile_widget.dart';
 import 'package:hawai_jubu/src/view/profile/update_profile.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:lottie/lottie.dart';
 import '../../repository/auth_repo/auth_repo.dart';
 import '../../view/navigations/navigation_bar/bottom_bar.dart';
-import '../_screen/flight/flight.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -148,11 +145,11 @@ class ProfileScreen extends StatelessWidget {
             // Bottom Part by Tashrif_jubaer
 
             Container(
-              padding: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 25),
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(right: 10, bottom: 15, left: 10),
+                    padding: const EdgeInsets.only(right: 10, bottom: 15, left: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -197,26 +194,13 @@ class ProfileScreen extends StatelessWidget {
                             onTap: () {}),
                         SizedBox(),
                         ProfileWidget(
-                            title: "Trends", icon: Icons.deck, onTap: () {}),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding:
-                        const EdgeInsets.only(right: 10, bottom: 15, left: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ProfileWidget(
-                            title: "Saved", icon: Icons.bookmark, onTap: () {}),
-                        const SizedBox(),
-                        ProfileWidget(
                             title: "Add Card",
                             icon: Icons.credit_card,
                             onTap: () {}),
                       ],
                     ),
                   ),
+
                   const SizedBox(
                     height: 10,
                   ),
@@ -240,24 +224,6 @@ class ProfileScreen extends StatelessWidget {
                   const SizedBox(
                     height: 2,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 50,
-                        width: 50,
-                        child: Center(
-                          child: Lottie.network(
-                              'https://assets3.lottiefiles.com/packages/lf20_obgheauh.json',
-                              repeat: true,
-                              animate: true),
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Text("Under Construction",
-                          style: Theme.of(context).textTheme.headline4),
-                    ],
-                  ),
                   ListTile(
                     title: const Align(
                         alignment: Alignment.center, child: Text("Log out")),
@@ -266,9 +232,7 @@ class ProfileScreen extends StatelessWidget {
                     },
                     tileColor: Colors.white,
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+
                 ],
               ),
             )

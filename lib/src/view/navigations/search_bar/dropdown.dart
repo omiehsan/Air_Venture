@@ -6,8 +6,8 @@ class MyListTileWithDropdown extends StatefulWidget {
 }
 
 class _MyListTileWithDropdownState extends State<MyListTileWithDropdown> {
-  String selectedOption = 'Traveller';
-  List<String> dropdownOptions = ['Traveller', 'Economy', 'Business', 'None'];
+  String selectedOption = 'None';
+  List<String> dropdownOptions = ['None', 'Economy', 'Business', ];
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +48,9 @@ class _MyListTileWithDropdownState extends State<MyListTileWithDropdown> {
                     ),
                   );
                 }).toList(),
-                underline: Container(), // Remove the underline from the dropdown
-                dropdownColor: Colors.black26, // Customize the dropdown background color
-                iconEnabledColor: Colors.white70, // Customize the dropdown icon color
+                underline: Container(),
+                dropdownColor: Colors.black26,
+                iconEnabledColor: Colors.white70,
               ),
             ],
           ),
