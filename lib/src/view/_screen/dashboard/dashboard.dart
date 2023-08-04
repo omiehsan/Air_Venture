@@ -81,7 +81,7 @@ class DashBoard extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SearchBoxs(),
+            SearchBoxs(),
             const MidBar(),
             Padding(
               padding:
