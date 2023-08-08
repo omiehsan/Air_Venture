@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/utils/constaints/images.dart';
 import 'package:intl/intl.dart';
-import '../../controller/authentication/models/flights_model.dart'; // Import the FlightSearchModel
+import '../../controller/authentication/models/flights_model.dart';
 
 class DestinationDetailsPage extends StatelessWidget {
   final FlightSearchModel flight;
@@ -17,7 +17,7 @@ class DestinationDetailsPage extends StatelessWidget {
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         title:  Text("Flight Detail",
-          style: GoogleFonts.poppins(
+          style: GoogleFonts.montserrat(
               fontWeight: FontWeight.bold, fontSize: 17)),
         centerTitle: true,
         elevation: 3,

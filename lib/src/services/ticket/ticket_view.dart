@@ -75,7 +75,6 @@ class _TicketViewState extends State<TicketView> {
                     ),
                   ],
                 ),
-
                 Padding(
                   padding: const EdgeInsets.only(top: 16.0,right: 18),
                   child: Column(
