@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -49,7 +50,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Notifications"),
+        title: Text("Notifications",
+            style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold, fontSize: 17)),
+        centerTitle: true,
 
         actions: [
           IconButton(

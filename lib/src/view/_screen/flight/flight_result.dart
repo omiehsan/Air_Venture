@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import '../../../controller/authentication/models/flights_model.dart'; // Import the FlightSearchModel
+import '../../../controller/authentication/models/flights_model.dart';
 import '../../flights/destination_details.dart';
 
 class Flight_Result extends StatelessWidget {
@@ -12,8 +12,8 @@ class Flight_Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  AppBar(
-        title:  Text("Departing Flights",
+      appBar: AppBar(
+        title: Text("Departing Flights",
             style: GoogleFonts.montserrat(
                 fontWeight: FontWeight.bold, fontSize: 17)),
         centerTitle: true,
@@ -36,7 +36,6 @@ class Flight_Result extends StatelessWidget {
 
           return GestureDetector(
             onTap: () {
-              // Navigate to the DestinationDetailsPage with the selected flight data.
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -45,7 +44,7 @@ class Flight_Result extends StatelessWidget {
               );
             },
             child: Card(
-              margin: const EdgeInsets.only(left: 10,right: 10,top: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -53,7 +52,8 @@ class Flight_Result extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 15.0,right: 15,top: 15,bottom: 10),
+                    padding: const EdgeInsets.only(
+                        left: 15.0, right: 15, top: 15, bottom: 10),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,12 +79,15 @@ class Flight_Result extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 10,),
+                            SizedBox(
+                              width: 10,
+                            ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('${flight.airline}',
+                                Text(
+                                  '${flight.airline}',
                                   style: GoogleFonts.poppins(
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold),
@@ -105,28 +108,27 @@ class Flight_Result extends StatelessWidget {
                             Text(
                               '\$${flight.price}',
                               style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.bold,color: Colors.green,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green,
                                   fontSize: 13),
                             ),
                             Text(
                               '${flight.flightClass}',
                               style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 14),
+                                  fontWeight: FontWeight.normal, fontSize: 14),
                             ),
-
                           ],
                         )
                       ],
                     ),
-
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
-                    child: Divider(thickness:1),
+                    child: Divider(thickness: 1),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 15.0,right: 15,bottom: 12),
+                    padding: const EdgeInsets.only(
+                        left: 15.0, right: 15, bottom: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -160,8 +162,7 @@ class Flight_Result extends StatelessWidget {
                             Text(
                               '$formattedDate',
                               style: GoogleFonts.poppins(
-                                fontSize: 14,fontWeight: FontWeight.normal
-                              ),
+                                  fontSize: 14, fontWeight: FontWeight.normal),
                             ),
                             Center(
                               child: Transform.rotate(
@@ -176,8 +177,7 @@ class Flight_Result extends StatelessWidget {
                             Text(
                               '$formattedDate',
                               style: GoogleFonts.montserrat(
-                                fontSize: 14, fontWeight: FontWeight.normal
-                              ),
+                                  fontSize: 14, fontWeight: FontWeight.normal),
                             ),
                           ],
                         ),
@@ -195,10 +195,10 @@ class Flight_Result extends StatelessWidget {
                               child: Text(
                                 '${flight.duration}',
                                 style: GoogleFonts.poppins(
-                                    fontSize: 14, fontWeight: FontWeight.normal),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal),
                               ),
                             ),
-
                             Text(
                               "1:05",
                               style: GoogleFonts.poppins(
@@ -212,8 +212,6 @@ class Flight_Result extends StatelessWidget {
                 ],
               ),
             ),
-
-
           );
         },
       ),

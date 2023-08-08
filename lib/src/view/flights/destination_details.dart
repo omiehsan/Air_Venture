@@ -16,9 +16,9 @@ class DestinationDetailsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
-        title:  Text("Flight Detail",
-          style: GoogleFonts.montserrat(
-              fontWeight: FontWeight.bold, fontSize: 17)),
+        title: Text("Flight Detail",
+            style: GoogleFonts.montserrat(
+                fontWeight: FontWeight.bold, fontSize: 17)),
         centerTitle: true,
         elevation: 3,
         flexibleSpace: Container(
@@ -31,7 +31,6 @@ class DestinationDetailsPage extends StatelessWidget {
           ),
         ),
       ),
-
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -269,8 +268,7 @@ class DestinationDetailsPage extends StatelessWidget {
                         Text(
                           '\$${flight.price}',
                           style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14),
+                              fontWeight: FontWeight.bold, fontSize: 14),
                         ),
                       ],
                     ),
@@ -283,7 +281,8 @@ class DestinationDetailsPage extends StatelessWidget {
                           style: GoogleFonts.poppins(
                               fontWeight: FontWeight.normal, fontSize: 14),
                         ),
-                        Text('\$${flight.price}',
+                        Text(
+                          '\$${flight.price}',
                           style: GoogleFonts.poppins(
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
@@ -296,7 +295,9 @@ class DestinationDetailsPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 12,),
+          SizedBox(
+            height: 12,
+          ),
           Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.92,
@@ -315,9 +316,11 @@ class DestinationDetailsPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-
-                child: Text('Book Tickets',style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.normal, fontSize: 16),),
+                child: Text(
+                  'Book Tickets',
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.normal, fontSize: 16),
+                ),
               ),
             ),
           ),

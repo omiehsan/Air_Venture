@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../contact_us/booking_issues.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +12,10 @@ class CustomerServices extends StatelessWidget {
       appBar: AppBar(
         leading:  IconButton( onPressed: () => Get.back(),
          icon: Icon(Icons.arrow_back_rounded)),
-        title: const Text("Customer Services"),
+        title:  Text("Customer Services",
+            style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold, fontSize: 17)),
+        centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(

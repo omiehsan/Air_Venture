@@ -133,6 +133,4 @@ class _RecommendedFlightsWidgetsState extends State<RecommendedFlightsWidgets> {
       ),
     );
   }
-
-
 }

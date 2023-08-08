@@ -9,7 +9,7 @@ class SearchBoxs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.brown.shade100,
+      color: Colors.brown.shade50,
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       child: ListView(
         shrinkWrap: true,
@@ -35,7 +35,8 @@ class SearchBoxs extends StatelessWidget {
                   hintStyle: const TextStyle(
                     color: Colors.white,
                   ),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 ),
               ),
             ),
@@ -60,12 +61,12 @@ class SearchBoxs extends StatelessWidget {
                   hintStyle: TextStyle(
                     color: Colors.white,
                   ),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 ),
               ),
             ),
           ),
-
           Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.9,
@@ -79,9 +80,9 @@ class SearchBoxs extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () async {
                   await controller.onSearchPressed();
-                  // Once the search is completed, navigate to the Flight_Result page.
                   if (controller.searchResults.isNotEmpty) {
-                    Get.to(() => Flight_Result(searchResults: controller.searchResults));
+                    Get.to(() =>
+                        Flight_Result(searchResults: controller.searchResults));
                   }
                 },
                 style: ElevatedButton.styleFrom(
