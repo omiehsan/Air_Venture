@@ -10,3 +10,11 @@ const String jSplashItem = "assets/images/banners/hawaisrcitem.png";
 
 const String jOnBBanner = "";
 
+
+// Flight Details
+
+const String jRoutingImage ="assets/images/icon/route.png";
+
+// Flight Airline Logo
+
+const String jBimanBanLogo ="assets/images/airline_logo/BBA.png";

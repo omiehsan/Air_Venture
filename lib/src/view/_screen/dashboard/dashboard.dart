@@ -13,6 +13,7 @@ import '../../navigations/navigation_bar/mid_bar.dart';
 import '../../navigations/navigation_bar/notifications.dart';
 import '../../navigations/search_bar/search_boxs.dart';
 import '../../profile/profile_screen.dart';
+import '../new/airlines.dart';
 
 class DashBoard extends StatelessWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -176,6 +177,7 @@ class DashBoard extends StatelessWidget {
             ),
             const RecommendedFlightsWidgets(),
             const TicketView(),
+            MyCarousel()
           ],
         ),
       ),

@@ -37,6 +37,7 @@ dependencies:
   flutter_native_splash: ^2.2.19
   liquid_swipe: ^3.1.0
   cloud_firestore: ^4.8.3
+  carousel_slider: ^4.0.0
 
 
 dev_dependencies:
@@ -68,6 +69,8 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/airline_logo/
+    - assets/images/icon/
     - assets/images/hotels/
     - assets/images/hotels/hilton_kuala_lumpur/
     - assets/images/hotels/marina_bay_sands/
@@ -79,7 +82,6 @@ flutter:
     - assets/images/hotels/best_west_heritage/
     - assets/images/hotels/hotel_sheraton/
     - assets/images/logo/
-    - assets/images/icon/
     - assets/images/banners/
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:hawai_jubu/src/view/_screen/flight/flight_result.dart';
 import '../../../controller/authentication/models/flights_model.dart';
 
 class SearchBoxController extends GetxController {
