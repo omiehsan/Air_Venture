@@ -105,37 +105,6 @@ class DashBoard extends StatelessWidget {
                             decoration: TextDecoration.underline,
                             color: Colors.deepOrange,
                           )),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            DashCategoryWidget(textTheme: Typography.blackCupertino),
-
-            //
-
-            Padding(
-              padding:
-                  const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      jDashPopular,
-                      style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    TextButton(
-                      child: Text(jDashSeeall,
-                          style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 17,
-                            decoration: TextDecoration.underline,
-                            color: Colors.deepOrange,
-                          )),
                       onPressed: () => Get.to(() => DashCategoryWidgetSeeAll(
                           textTheme: Typography.blackCupertino)),
                     ),

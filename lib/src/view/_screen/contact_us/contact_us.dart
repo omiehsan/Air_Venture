@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../services/payment_card/add_card.dart';
@@ -34,7 +33,7 @@ class ContactUs extends StatelessWidget {
               padding: EdgeInsets.all(15),
             ),
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 radius: 17,
                 backgroundColor: Colors.deepOrange,
                 child: Icon(Icons.warning, size: 20, color: Colors.white70),
@@ -74,7 +73,7 @@ class ContactUs extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => IssuesBooking(),
+                    builder: (context) => const IssuesBooking(),
                   ),
                 );
               },
@@ -207,7 +206,7 @@ class ContactUs extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => AddCard(),
+                    builder: (context) => const AddCard(),
                   ),
                 );
               },

@@ -317,7 +317,7 @@ class DestinationDetailsPage extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  'Book Tickets',
+                  'Continue',
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.normal, fontSize: 16),
                 ),

@@ -85,10 +85,10 @@ class _TicketViewState extends State<TicketView> {
                       ),
                       ElevatedButton(
                         onPressed: () {},
-                        child: const Text("Active"),
                         style: ElevatedButton.styleFrom(
-                          minimumSize: Size(60, 22),
+                          minimumSize: const Size(60, 22),
                         ),
+                        child: const Text("Active"),
                       )
                     ],
                   ),
@@ -97,7 +97,7 @@ class _TicketViewState extends State<TicketView> {
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
-              child: Divider(thickness: 2),
+              child: const Divider(thickness: 2),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,7 +129,7 @@ class _TicketViewState extends State<TicketView> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 18),
+                  padding: const EdgeInsets.symmetric(horizontal: 18),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -160,7 +160,7 @@ class _TicketViewState extends State<TicketView> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 18),
+                  padding: const EdgeInsets.symmetric(horizontal: 18),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hawai_jubu/src/services/ticket/ticket_view.dart';
 import 'package:hawai_jubu/src/view/flights/destination_list.dart';
 import 'package:hawai_jubu/src/view/profile/profile_widget.dart';
 import 'package:hawai_jubu/src/view/profile/update_profile.dart';
@@ -174,7 +175,7 @@ class ProfileScreen extends StatelessWidget {
                         ProfileWidget(
                             title: "Tickets",
                             icon: Icons.airplane_ticket_sharp,
-                            onTap: () {}),
+                            onTap: ()=> Get.to(()=>const TicketView())),
                         SizedBox(),
                         ProfileWidget(
                             title: "Wishlist",
