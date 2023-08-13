@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/services/category_all/category_seeall.dart';
-import 'package:hawai_jubu/src/services/ticket/ticket_view.dart';
 import 'package:hawai_jubu/src/utils/constaints/images.dart';
 import 'package:hawai_jubu/src/utils/constaints/texts.dart';
 import 'package:lottie/lottie.dart';
@@ -40,7 +39,7 @@ class DashBoard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => NotificationScreen(),
+                  builder: (context) => const NotificationScreen(),
                 ),
               );
             },
@@ -58,7 +57,7 @@ class DashBoard extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ProfileScreen(),
+                    builder: (context) => const ProfileScreen(),
                   ),
                 );
               },
@@ -93,7 +92,7 @@ class DashBoard extends StatelessWidget {
                 ),
               ),
             ),
-            MyCarousel(),
+            const MyCarousel(),
             Padding(
               padding:
                   const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
