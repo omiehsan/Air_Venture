@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/utils/constaints/images.dart';
+import 'package:hawai_jubu/src/view/_screen/passportnosearch/passportPage.dart';
 import 'package:intl/intl.dart';
 import '../../controller/authentication/models/flights_model.dart';
 
@@ -301,7 +304,7 @@ class DestinationDetailsPage extends StatelessWidget {
           Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.92,
-              height: 50.0,
+              height: 46.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 gradient: const LinearGradient(
@@ -309,7 +312,8 @@ class DestinationDetailsPage extends StatelessWidget {
                 ),
               ),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => PassportPage(),
+    ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
