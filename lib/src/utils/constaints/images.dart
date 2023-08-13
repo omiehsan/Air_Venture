@@ -27,3 +27,7 @@ const String jBanner3 = "assets/images/benefits/slider (3).png";
 const String jBanner4 = "assets/images/benefits/slider (4).png";
 const String jBanner5 = "assets/images/benefits/slider (5).png";
 const String jBanner6 = "assets/images/benefits/slider (6).png";
+
+// App Icon
+
+const String jCar = "assets/images/icon/car.png";
