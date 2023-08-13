@@ -61,9 +61,7 @@ class _TicketViewState extends State<TicketView> {
                             style: GoogleFonts.poppins(
                                 fontSize: 13, fontWeight: FontWeight.bold),
                           ),
-                          const SizedBox(
-                            height: 5,
-                          ),
+                          
                           Text(
                             "BBDA-189",
                             style: GoogleFonts.poppins(
@@ -79,15 +77,15 @@ class _TicketViewState extends State<TicketView> {
                   padding: const EdgeInsets.only(top: 16.0,right: 18),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
                         "11 Jun 2023",
                       ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(60, 22),
-                        ),
+                      Container(
+                        color: Colors.orange,
+                        height: MediaQuery.of(context).size.height*0.025,
+                        width: MediaQuery.of(context).size.width*0.11,
                         child: const Text("Active"),
                       )
                     ],

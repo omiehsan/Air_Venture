@@ -4,17 +4,21 @@ import 'package:hawai_jubu/src/services/recommended/recommend.dart';
 import '../../../utils/constaints/images.dart';
 
 final List<Widget> carouselItems = [
-  Image.asset(jSplashItem),
-  Image.asset(jSplashIcon),
-  Image.asset(jLeMeridianView),
-  // Add more widgets as needed
+  Image.asset(jBanner),
+  Image.asset(jBanner2),
+  Image.asset(jBanner3),
+  Image.asset(jBanner4),
+  Image.asset(jBanner5),
+  Image.asset(jBanner6),
 ];
 class MyCarousel extends StatelessWidget {
+  const MyCarousel({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
-        height: 100,
+        height: 120,
         autoPlay: true,
         enlargeCenterPage: true,
         aspectRatio: 16 /9,

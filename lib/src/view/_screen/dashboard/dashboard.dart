@@ -25,12 +25,9 @@ class DashBoard extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Align(
-          alignment: Alignment.centerLeft,
-          child: Image.asset(
-            jSplashLogo,
-            width: MediaQuery.of(context).size.width * 0.50,
-          ),
+        title: Image.asset(
+          jSplashLogo,
+          width: MediaQuery.of(context).size.width * 0.50,
         ),
         actions: [
           IconButton(
@@ -86,6 +83,19 @@ class DashBoard extends StatelessWidget {
             const MidBar(),
             Padding(
               padding:
+                  const EdgeInsets.only(top: 20.0, left: 10.0, right: 10.0),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Why Book With airVenture?",
+                  style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.w600, fontSize: 18),
+                ),
+              ),
+            ),
+            MyCarousel(),
+            Padding(
+              padding:
                   const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
               child: Align(
                 alignment: Alignment.topLeft,
@@ -95,7 +105,7 @@ class DashBoard extends StatelessWidget {
                     Text(
                       jDashPopular,
                       style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.bold, fontSize: 18),
+                          fontWeight: FontWeight.w600, fontSize: 18),
                     ),
                     TextButton(
                       child: Text(jDashSeeall,
@@ -113,8 +123,6 @@ class DashBoard extends StatelessWidget {
               ),
             ),
             DashCategoryWidget(textTheme: Typography.blackCupertino),
-
-
             Padding(
               padding:
                   const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
@@ -126,7 +134,7 @@ class DashBoard extends StatelessWidget {
                     Text(
                       jHotelsForYou,
                       style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.bold, fontSize: 18),
+                          fontWeight: FontWeight.w600, fontSize: 18),
                     ),
                     TextButton(
                       child: Text(
@@ -145,8 +153,6 @@ class DashBoard extends StatelessWidget {
               ),
             ),
             const RecommendedFlightsWidgets(),
-            const TicketView(),
-            MyCarousel()
           ],
         ),
       ),

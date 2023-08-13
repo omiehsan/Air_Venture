@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hawai_jubu/src/services/ticket/ticket_view.dart';
+import 'package:hawai_jubu/src/services/ticket/ticket_list.dart';
 import 'package:hawai_jubu/src/view/flights/destination_list.dart';
 import 'package:hawai_jubu/src/view/profile/profile_widget.dart';
 import 'package:hawai_jubu/src/view/profile/update_profile.dart';
@@ -31,8 +31,11 @@ class ProfileScreen extends StatelessWidget {
               ),
             );
           },
-          icon: const Icon(LineAwesomeIcons.angle_left),
+          icon: const Icon(Icons.arrow_back_rounded),
         ),
+        title: Text("Profile",style: GoogleFonts.poppins(
+            fontWeight: FontWeight.bold, fontSize: 17)),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {},
@@ -65,7 +68,7 @@ class ProfileScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/airbg.jpg'),
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                     colorFilter: ColorFilter.mode(
                         Colors.black.withOpacity(0.4), BlendMode.dstATop),
                   ),
@@ -175,7 +178,7 @@ class ProfileScreen extends StatelessWidget {
                         ProfileWidget(
                             title: "Tickets",
                             icon: Icons.airplane_ticket_sharp,
-                            onTap: ()=> Get.to(()=>const TicketView())),
+                            onTap: ()=> Get.to(()=>const TicketList())),
                         SizedBox(),
                         ProfileWidget(
                             title: "Wishlist",

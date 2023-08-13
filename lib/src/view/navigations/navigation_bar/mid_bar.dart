@@ -35,23 +35,21 @@ class MidBar extends StatelessWidget {
                 text: "Car Rentals",
                 onTap: () => Get.to(() => DestinationListPage()),
               ),
-              VerticalDivider(thickness: 1),
-              MidBarWidget(
-                  iconData: Icons.airplane_ticket_outlined,
-                  text: "Travel Insurance",
-                  onTap: () {}),
-              VerticalDivider(
-                thickness: 1,
-              ),
-              MidBarWidget(
-                iconData: FontAwesomeIcons.accusoft,
-                text: "Apply for visa",
-                onTap: () {},
-              ),
+              // VerticalDivider(thickness: 1),
+              // MidBarWidget(
+              //     iconData: Icons.airplane_ticket_outlined,
+              //     text: "Travel Insurance",
+              //     onTap: () {}),
               VerticalDivider(thickness: 1),
               MidBarWidget(
                 iconData: Icons.bar_chart,
                 text: "Fare Alerts",
+                onTap: () {},
+              ),
+              VerticalDivider(thickness: 1),
+              MidBarWidget(
+                iconData: FontAwesomeIcons.accusoft,
+                text: "Apply for visa",
                 onTap: () {},
               ),
               VerticalDivider(thickness: 1),

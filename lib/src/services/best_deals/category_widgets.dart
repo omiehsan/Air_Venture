@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hawai_jubu/src/services/recommended/recommend.dart';
 import 'package:hawai_jubu/src/services/ticket/trip_screen.dart';
-import 'package:hawai_jubu/src/view/_screen/tileview.dart';
 import 'dash_category_widget.dart';
 
 class DashCategoryWidget extends StatelessWidget {
@@ -17,7 +17,7 @@ class DashCategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 198,
+      height: 220,
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
@@ -28,74 +28,51 @@ class DashCategoryWidget extends StatelessWidget {
             print(catName);
             Get.to(const Trip());
           },
-          child: Container(
-            padding:
-                const EdgeInsets.only(left: 5, top: 5, bottom: 5, right: 5),
-            child: Card(
-              elevation: 6,
-              clipBehavior: Clip.antiAlias,
-              child: SizedBox(
-                height: 160.0,
-                width: 180.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 90,
-                      width: double.infinity,
-                      child: Tileview(),
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            elevation: 6,
+            clipBehavior: Clip.antiAlias,
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.6,
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 120,
+                    width: double.infinity,
+                    child: Image.asset(catItems[index].catImage),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("${catItems[index].catExperts}",
+                            style:
+                                const TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text(catItems[index].catName,
+                            textAlign: TextAlign.center,
+                            style:
+                                textTheme.headline6?.apply(color: Colors.black),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text("${catItems[index].catJobs}",
+                            style:
+                                const TextStyle(fontWeight: FontWeight.bold)),
+                      ],
                     ),
-                    SizedBox(
-                      height: 90,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(Icons.circle,
-                                  color: Colors.green, size: 8.0),
-                              const SizedBox(width: 3.0),
-                              Text("${catItems[index].catExperts}",
-                                  style:
-                                      const TextStyle(fontWeight: FontWeight.bold)),
-                              const SizedBox(width: 3.0),
-                              Text("x"),
-                            ],
-                          ),
-                          Divider(height: 1),
-                          SizedBox(
-                            height: 40,
-                            width: 130,
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Text(catItems[index].catName,
-                                  textAlign: TextAlign.center,
-                                  style: textTheme.headline6
-                                      ?.apply(color: Colors.black),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis),
-                            ),
-                          ),
-                          Divider(height: 1),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(Icons.check,
-                                  color: Colors.black, size: 15.0),
-                              SizedBox(width: 3.0),
-                              Text("${catItems[index].catJobs}",
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold)),
-                              SizedBox(width: 3.0),
-                              Text("s"),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  )
+                ],
               ),
             ),
           ),

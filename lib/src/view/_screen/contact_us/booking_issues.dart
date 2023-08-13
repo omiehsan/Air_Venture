@@ -16,7 +16,7 @@ class IssuesBooking extends StatelessWidget {
       appBar: AppBar(
         title: Text("Issues with Booking",
             style: GoogleFonts.poppins(
-                fontWeight: FontWeight.bold, fontSize: 17)),
+                fontWeight: FontWeight.bold, fontSize: 17,color: Colors.white)),
         centerTitle: true,
         elevation: 3,
         flexibleSpace: Container(

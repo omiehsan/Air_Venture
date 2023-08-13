@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hawai_jubu/src/services/recommended/recommend.dart';
 import 'package:hawai_jubu/src/services/recommended/recommended_models.dart';
 import 'package:hawai_jubu/src/utils/widgets/bottomsheet_category/btmsht_cat.dart';
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../contact_us/booking_issues.dart';
-import 'package:get/get.dart';
 
 class CustomerServices extends StatelessWidget {
   const CustomerServices({Key? key}) : super(key: key);
@@ -10,11 +9,9 @@ class CustomerServices extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:  IconButton( onPressed: () => Get.back(),
-         icon: Icon(Icons.arrow_back_rounded)),
-        title:  Text("Customer Services",
-            style: GoogleFonts.poppins(
-                fontWeight: FontWeight.bold, fontSize: 17)),
+        title: Text("Customer Services",
+            style:
+            GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 17,color: Colors.white)),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -28,7 +25,7 @@ class CustomerServices extends StatelessWidget {
       ),
       backgroundColor: Colors.brown.shade50,
       body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView(
           children: [
             const Padding(
@@ -190,6 +187,7 @@ class CustomerServices extends StatelessWidget {
               tileColor: Colors.white,
               onTap: () {},
             ),
+            SizedBox(height: 5,)
           ],
         ),
       ),

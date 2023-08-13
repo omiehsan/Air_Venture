@@ -8,9 +8,9 @@ import '../../../utils/widgets/button/elevated_button_widget.dart';
 import '../forget_password/buildshowmodalbottomsheet.dart';
 
 class LoginForm extends StatelessWidget {
-   LoginForm({
-     Key? key,
-   }) : super(key: key);
+  LoginForm({
+    Key? key,
+  }) : super(key: key);
 
   RxBool isVisible = true.obs;
   static final _formKey = GlobalKey<FormState>();
@@ -56,7 +56,7 @@ class LoginForm extends StatelessWidget {
               height: 15,
             ),
             Obx(
-                  () => TextFormField(
+              () => TextFormField(
                 obscureText: isVisible.value,
                 controller: loginController.password,
                 validator: (value) {
@@ -69,9 +69,16 @@ class LoginForm extends StatelessWidget {
                 },
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.fingerprint),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide.none),
+                  fillColor: Colors.white60,
+                  filled: true,
                   suffixIcon: IconButton(
                     onPressed: () => passVisibility(),
-                    icon: isVisible.value ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+                    icon: isVisible.value
+                        ? Icon(Icons.visibility)
+                        : Icon(Icons.visibility_off),
                   ),
                 ),
               ),
@@ -92,9 +99,12 @@ class LoginForm extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    LoginController.instance.loginUser(loginController.email.text.trim(), loginController.password.text.trim());
+                    LoginController.instance.loginUser(
+                        loginController.email.text.trim(),
+                        loginController.password.text.trim());
                   }
-                }, child: Text("Login"),
+                },
+                child: Text("Login"),
               ),
             ),
           ],
@@ -102,7 +112,8 @@ class LoginForm extends StatelessWidget {
       ),
     );
   }
-   passVisibility() {
-     isVisible.value = !isVisible.value;
-   }
+
+  passVisibility() {
+    isVisible.value = !isVisible.value;
+  }
 }

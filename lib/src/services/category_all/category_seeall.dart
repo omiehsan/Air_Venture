@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hawai_jubu/src/services/ticket/trip_screen.dart';
-import 'package:hawai_jubu/src/view/_screen/tileview.dart';
 import 'package:hawai_jubu/src/view/navigations/navigation_bar/top_bar.dart';
 import '../best_deals/dash_category_widget.dart';
 
-
 class DashCategoryWidgetSeeAll extends StatelessWidget {
+  final String  imageUrl = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapercrafter.com%2F134786-town-night-view-dubai-united-arab-emirates-cityscape.html&psig=AOvVaw2Y-C2DMxT0bgwlPNo1Yf1Z&ust=1691955191262000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLiWzbHu14ADFQAAAAAdAAAAABAE';
+
   DashCategoryWidgetSeeAll({
     Key? key,
     required this.textTheme,
@@ -14,11 +14,14 @@ class DashCategoryWidgetSeeAll extends StatelessWidget {
 
   final TextTheme textTheme;
   final catItems = DashCategoriesModel.catItems;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TopBar(title: 'Popular Flights', icon: Icons.arrow_back_rounded, onTap: Get.back,),
+      appBar: TopBar(
+        title: 'Popular Flights',
+        icon: Icons.arrow_back_rounded,
+        onTap: Get.back,
+      ),
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
@@ -32,74 +35,31 @@ class DashCategoryWidgetSeeAll extends StatelessWidget {
               print(catName);
               Get.to(const Trip());
             },
-            child: Container(
-              padding:
-              const EdgeInsets.only(left: 5, top: 5, bottom: 5, right: 5),
-              child: Card(
-                elevation: 6,
-                clipBehavior: Clip.antiAlias,
-                child: Container(
-                  height: 160.0,
-                  width: 180.0,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 90,
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Tileview(),
+            child: Card(
+              elevation: 5,
+              clipBehavior: Clip.antiAlias,
+              child: Container(
+                height: 200.0,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                        height: 160,
+                        width: double.infinity,
+                         child: Image.asset(catItems[index].catImage)),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(catItems[index].catName),
+                          Text("${catItems[index].catExperts}"),
+                          Text("${catItems[index].catJobs}"),
+                        ],
                       ),
-                      SizedBox(
-                        height: 70,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Icon(Icons.circle,
-                                    color: Colors.green, size: 8.0),
-                                const SizedBox(width: 3.0),
-                                Text("${catItems[index].catExperts}",
-                                    style:
-                                    TextStyle(fontWeight: FontWeight.bold)),
-                                const SizedBox(width: 3.0),
-                                Text("x"),
-                              ],
-                            ),
-                            Divider(height: 1),
-                            SizedBox(
-                              height: 40,
-                              width: 130,
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text(catItems[index].catName,
-                                    textAlign: TextAlign.center,
-                                    style: textTheme.headline6
-                                        ?.apply(color: Colors.black),
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis),
-                              ),
-                            ),
-                            Divider(height: 1),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(Icons.check,
-                                    color: Colors.black, size: 15.0),
-                                SizedBox(width: 3.0),
-                                Text("${catItems[index].catJobs}",
-                                    style:
-                                    TextStyle(fontWeight: FontWeight.bold)),
-                                SizedBox(width: 3.0),
-                                Text("s"),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    )
+                  ],
                 ),
               ),
             ),

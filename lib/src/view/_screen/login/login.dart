@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hawai_jubu/src/view/navigations/navigation_bar/bottom_bar.dart';
 import '../../../utils/widgets/form/bottom_form_widget.dart';
 import 'login_form_widget.dart';
 import 'login_header_widget.dart';
@@ -9,29 +10,43 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.brown.shade100,
-        body: SingleChildScrollView(
-          child: Container(
-             padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: const LoginHeaderWidgets(),
-                ),
-                LoginForm(),
-                LoginItemWidget(),
-                BottomWidget(),
-              ],
-            ),
+    return Scaffold(
+      backgroundColor: Colors.brown.shade50,
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: const LoginHeaderWidgets(),
+              ),
+              LoginForm(),
+              LoginItemWidget(),
+              SizedBox(height: 20),
+              BottomWidget(),
+            ],
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const BottomBar(),
+            ),
+          );
+        },
+        mini: true,
+        backgroundColor: Colors.brown.withOpacity(0.1),
+        child: const Icon(
+          Icons.close,
+          size: 20,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
   }
 }
-
-

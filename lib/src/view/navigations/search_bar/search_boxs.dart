@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hawai_jubu/src/view/navigations/search_bar/flight_class.dart';
 import '../../../controller/authentication/controllers/search_controller.dart';
 import 'package:hawai_jubu/src/view/_screen/flight/flight_result.dart';
 
@@ -58,7 +59,7 @@ class SearchBoxs extends StatelessWidget {
                     color: Colors.white70,
                   ),
                   hintText: 'To',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     color: Colors.white,
                   ),
                   contentPadding:
@@ -67,6 +68,35 @@ class SearchBoxs extends StatelessWidget {
               ),
             ),
           ),
+          ListTile(
+            title: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.06,
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.black26,
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+
+                  ),
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.supervisor_account,
+                        color: Colors.white70,
+                      ),
+                      SizedBox(width: 5,),
+                      FlightClass()
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 5),
           Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.9,

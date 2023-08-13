@@ -18,3 +18,12 @@ const String jRoutingImage ="assets/images/icon/route.png";
 // Flight Airline Logo
 
 const String jBimanBanLogo ="assets/images/airline_logo/BBA.png";
+
+// Flight Banners
+
+const String jBanner = "assets/images/benefits/slider (1).png";
+const String jBanner2 = "assets/images/benefits/slider (2).png";
+const String jBanner3 = "assets/images/benefits/slider (3).png";
+const String jBanner4 = "assets/images/benefits/slider (4).png";
+const String jBanner5 = "assets/images/benefits/slider (5).png";
+const String jBanner6 = "assets/images/benefits/slider (6).png";

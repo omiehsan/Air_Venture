@@ -18,7 +18,7 @@ class SignUpFormSection extends StatelessWidget {
     return Form(
       key: _formKey,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0),
+        padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,9 +34,14 @@ class SignUpFormSection extends StatelessWidget {
               },
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.person),
-                  label: Text("Full Name"),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide.none),
+                  fillColor: Colors.white60,
+                  filled: true,
                   hintText: "Full Name"),
             ),
+            SizedBox(height: 5,),
             TextFormField(
               controller: registerController.email,
               validator: (value) {
@@ -52,11 +57,15 @@ class SignUpFormSection extends StatelessWidget {
                 return null;
               },
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.alternate_email),
-                  label: Text('Email'),
+                  prefixIcon: const Icon(Icons.email_outlined),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide.none),
+                  fillColor: Colors.white60,
+                  filled: true,
                   hintText: "Email"),
             ),
-
+            SizedBox(height: 5,),
             TextFormField(
               controller: registerController.phoneNum,
               validator: (value) {
@@ -71,11 +80,15 @@ class SignUpFormSection extends StatelessWidget {
                 return null;
               },
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.numbers),
-                  label: Text('Phone'),
+                  prefixIcon: Icon(Icons.phone_android_outlined),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide.none),
+                  fillColor: Colors.white60,
+                  filled: true,
                   hintText: "Phone"),
             ),
-
+            SizedBox(height: 5,),
             TextFormField(
               controller: registerController.password,
               validator: (value) {
@@ -88,11 +101,15 @@ class SignUpFormSection extends StatelessWidget {
               },
               obscureText: true,
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.fingerprint),
-                  label: Text("TTS_Password"),
+                  prefixIcon: Icon(Icons.lock),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide.none),
+                  fillColor: Colors.white60,
+                  filled: true,
                   hintText: "Password"),
             ),
-
+            SizedBox(height: 15,),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

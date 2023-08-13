@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hawai_jubu/src/view/_screen/contact_us/pre_bookings_qs.dart';
+import 'package:hawai_jubu/src/view/_screen/contact_us/tab.dart';
+import 'package:hawai_jubu/src/view/profile/update_profile.dart';
 import '../../../services/payment_card/add_card.dart';
+import 'assurance.dart';
 import 'booking_issues.dart';
+import 'covidsafty.dart';
 
 class ContactUs extends StatelessWidget {
   const ContactUs({Key? key}) : super(key: key);
@@ -12,7 +17,7 @@ class ContactUs extends StatelessWidget {
       appBar: AppBar(
         title: Text("Contact Us",
             style:
-                GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 17)),
+                GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 17,color: Colors.white)),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -97,7 +102,14 @@ class ContactUs extends StatelessWidget {
                       fontWeight: FontWeight.normal, fontSize: 14)),
               trailing: const Icon(Icons.chevron_right),
               tileColor: Colors.white,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const UpdateProfile(),
+                  ),
+                );
+              },
             ),
             const Divider(
               height: 1.5,
@@ -118,7 +130,14 @@ class ContactUs extends StatelessWidget {
                       fontWeight: FontWeight.normal, fontSize: 14)),
               trailing: const Icon(Icons.chevron_right),
               tileColor: Colors.white,
-              onTap: () {},
+              onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => PrebookigTabBar(),
+                //   ),
+                // );
+              },
             ),
             const Divider(
               height: 1.5,
@@ -139,7 +158,14 @@ class ContactUs extends StatelessWidget {
                       fontWeight: FontWeight.normal, fontSize: 14)),
               trailing: const Icon(Icons.chevron_right),
               tileColor: Colors.white,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PrebookigTabBar(),
+                  ),
+                );
+              },
             ),
             const Divider(
               height: 1.5,
@@ -160,7 +186,14 @@ class ContactUs extends StatelessWidget {
                       fontWeight: FontWeight.normal, fontSize: 14)),
               trailing: const Icon(Icons.chevron_right),
               tileColor: Colors.white,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Covid(),
+                  ),
+                );
+              },
             ),
             const Divider(
               height: 1.5,
@@ -181,7 +214,14 @@ class ContactUs extends StatelessWidget {
                       fontWeight: FontWeight.normal, fontSize: 14)),
               trailing: const Icon(Icons.chevron_right),
               tileColor: Colors.white,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Assurance(),
+                  ),
+                );
+              },
             ),
             const Divider(
               height: 1.5,

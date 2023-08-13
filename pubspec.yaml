@@ -38,6 +38,9 @@ dependencies:
   liquid_swipe: ^3.1.0
   cloud_firestore: ^4.8.3
   carousel_slider: ^4.0.0
+  cached_network_image: ^3.0.0
+  http: ^0.13.3
+
 
 
 dev_dependencies:
@@ -69,6 +72,8 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/images/destination/
+    - assets/images/benefits/
     - assets/images/airline_logo/
     - assets/images/icon/
     - assets/images/hotels/

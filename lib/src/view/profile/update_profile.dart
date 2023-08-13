@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:hawai_jubu/src/controller/authentication/controllers/profile_controller.dart';
 import 'package:hawai_jubu/src/controller/authentication/models/user_model.dart';
-import 'package:hawai_jubu/src/view/navigations/navigation_bar/top_bar.dart';
 
 class UpdateProfile extends StatelessWidget {
   const UpdateProfile({Key? key}) : super(key: key);
@@ -14,10 +13,18 @@ class UpdateProfile extends StatelessWidget {
     final Controller = Get.put(ProfileController());
     return Scaffold(
       backgroundColor: Colors.brown.shade50,
-      appBar: TopBar(
-        title: 'Update Profile',
-        icon: Icons.arrow_back,
-        onTap: () => Get.back(),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Update Profile'),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[Color(0xFFfc8a28), Color(0xFFc55c00)],
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(

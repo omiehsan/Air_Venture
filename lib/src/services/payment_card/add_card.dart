@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../utils/constaints/styles_colors.dart';
 
 class AddCard extends StatelessWidget {
@@ -13,14 +10,9 @@ class AddCard extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        leading: IconButton(
-          onPressed:
-                ()=> Get.back(),
-          icon: const Icon(Icons.arrow_back),
-        ),
         title: Text("Payment Methods",
             style: GoogleFonts.poppins(fontWeight: FontWeight.bold,
-                fontSize: 17)),
+                fontSize: 17,color: Colors.white)),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
