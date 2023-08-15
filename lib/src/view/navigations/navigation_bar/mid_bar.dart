@@ -30,7 +30,7 @@ class MidBar extends StatelessWidget {
               VerticalDivider(thickness: 1),
               MidBarWidget(
                 iconData: Icons.time_to_leave,
-                text: "Car Rentals",
+                text: "Airport Cab",
                 onTap: () => Get.to(() => AirportListPage()),
               ),
               // VerticalDivider(thickness: 1),
