@@ -13,10 +13,9 @@ class Trip extends StatelessWidget {
         padding: EdgeInsets.all(20.0),
         child: SingleChildScrollView(
           child: Column(
-
             children: [
               Space.Y(60),
-              for (int i = 0; i < 3; i++) TicketView()
+              for (int i = 0; i < 3; i++) const TicketView()
             ],
           ),
         ),

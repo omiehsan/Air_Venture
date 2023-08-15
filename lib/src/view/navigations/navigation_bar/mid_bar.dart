@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:hawai_jubu/main.dart';
 import 'package:hawai_jubu/src/services/airport_cab/airport_cab_list.dart';
+import 'package:hawai_jubu/src/view/flights/status_tab.dart';
 import 'package:hawai_jubu/src/view/navigations/navigation_bar/widgets/mid_bar_widget.dart';
-import '../../../services/ticket/trip_screen.dart';
 
 
 class MidBar extends StatelessWidget {
@@ -26,7 +25,7 @@ class MidBar extends StatelessWidget {
               MidBarWidget(
                 iconData: Icons.flight,
                 text: "Flight Status",
-                onTap: () => Get.to(() => Trip()),
+                onTap: () => Get.to(() => FlightStatus()),
               ),
               VerticalDivider(thickness: 1),
               MidBarWidget(
