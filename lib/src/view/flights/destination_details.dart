@@ -3,9 +3,11 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/utils/constaints/images.dart';
+import 'package:hawai_jubu/src/view/_screen/passportidsearch/passportsearchpage.dart';
 import 'package:hawai_jubu/src/view/navigations/navigation_bar/bottom_bar.dart';
 import 'package:intl/intl.dart';
 import '../../controller/authentication/models/flights_model.dart';
+
 
 class DestinationDetailsPage extends StatelessWidget {
   final FlightSearchModel flight;
@@ -312,7 +314,7 @@ class DestinationDetailsPage extends StatelessWidget {
                 ),
               ),
               child: ElevatedButton(
-                onPressed: () => Get.to(() => BottomBar(),
+                onPressed: () => Get.to(() => SearchPage(),
     ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,

@@ -7,7 +7,6 @@ class AirportListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[50],
       appBar: AppBar(
         title: Text("Cab",
             style: GoogleFonts.montserrat(
@@ -58,7 +57,7 @@ class AirportListPage extends StatelessWidget {
                                   // onTap: () {},
                                   child: Material(
                                     borderRadius: BorderRadius.circular(10),
-                                    elevation: 0,
+                                    elevation: 2,
                                     child: Container(
                                       height: 50,
                                       width: 50,
@@ -76,23 +75,11 @@ class AirportListPage extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Row(
-                                      children: [
-                                        Text(
-                                          cars['cartype'],
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.w600),
-                                        ),
-                                        const SizedBox(width: 10),
-                                        const Icon(Icons.person,size: 20,),
-                                        Text(
-                                          cars['capacity'],
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal),
-                                        ),
-                                      ],
+                                    Text(
+                                      cars['cartype'],
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w600),
                                     ),
                                     Text(
                                       cars['cartitle'],
@@ -110,13 +97,17 @@ class AirportListPage extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-
+                                Text(
+                                  cars['capacity'],
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600),
+                                ),
                                 Text(
                                   '\$${cars['payment']}',
                                   style: GoogleFonts.poppins(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                  color: Colors.green),
+                                      fontWeight: FontWeight.w600),
                                 ),
                               ],
                             ),
