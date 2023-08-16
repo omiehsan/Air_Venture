@@ -57,7 +57,7 @@ class AirportListPage extends StatelessWidget {
                                   // onTap: () {},
                                   child: Material(
                                     borderRadius: BorderRadius.circular(10),
-                                    elevation: 2,
+                                    elevation: 0,
                                     child: Container(
                                       height: 50,
                                       width: 50,

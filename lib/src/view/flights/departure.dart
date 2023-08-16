@@ -44,7 +44,7 @@ class Departure extends StatelessWidget {
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
               stream: FirebaseFirestore.instance
-                  .collection('Destination')
+                  .collection('FlightStatus')
                   .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -56,7 +56,7 @@ class Departure extends StatelessWidget {
                 return ListView.builder(
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, index) {
-                    DocumentSnapshot destination = snapshot.data!.docs[index];
+                    DocumentSnapshot status = snapshot.data!.docs[index];
                     return Card(
                       margin: const EdgeInsets.symmetric(
                         horizontal: 8,
@@ -68,16 +68,16 @@ class Departure extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(destination['From'],
+                            Text(status['fno'],
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600, fontSize: 14)),
-                            Text(destination['To'],
+                            Text(status['From'],
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600, fontSize: 14)),
-                            Text('${formatDate(destination['Date'])}',
+                            Text(status['departure'],
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600, fontSize: 14)),
-                            Text('\$${destination['Price']}',
+                            Text(status['status'],
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600, fontSize: 14)),
                           ],

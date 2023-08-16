@@ -22,7 +22,7 @@ class Arrival extends StatelessWidget {
                       fontWeight: FontWeight.w600, fontSize: 14),
                 ),
                 Text(
-                  "TO",
+                  "FROM",
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w600, fontSize: 14),
                 ),
@@ -44,7 +44,7 @@ class Arrival extends StatelessWidget {
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
               stream: FirebaseFirestore.instance
-                  .collection('Destination')
+                  .collection('FlightStatus')
                   .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -56,27 +56,27 @@ class Arrival extends StatelessWidget {
                 return ListView.builder(
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, index) {
-                    DocumentSnapshot destination = snapshot.data!.docs[index];
+                    DocumentSnapshot status = snapshot.data!.docs[index];
                     return Card(
                       margin: const EdgeInsets.symmetric(
                         horizontal: 8),
                       elevation: 0,
                       child: Padding(
-                        padding: EdgeInsets.all(16),
+                        padding: EdgeInsets.all(14),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(destination['From'],
+                            Text(status['fno'],
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600, fontSize: 14)),
-                            Text(destination['To'],
+                            Text(status['From'],
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600, fontSize: 14)),
-                            Text('${formatDate(destination['Date'])}',
+                            Text(status['arrival'],
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600, fontSize: 14)),
-                            Text('\$${destination['Price']}',
+                            Text('${status['status']}',
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600, fontSize: 14)),
                           ],
