@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -5,12 +6,14 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/services/ticket/ticket_list.dart';
+import 'package:hawai_jubu/src/view/_screen/contact_us/contact_us.dart';
 import 'package:hawai_jubu/src/view/flights/destination_list.dart';
 import 'package:hawai_jubu/src/view/profile/profile_widget.dart';
 import 'package:hawai_jubu/src/view/profile/update_profile.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import '../../repository/auth_repo/auth_repo.dart';
 import '../../view/navigations/navigation_bar/bottom_bar.dart';
+import '../_screen/more_views/app_settings.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -212,7 +215,7 @@ class ProfileScreen extends StatelessWidget {
                     leading: const Icon(Icons.help),
                     title: const Text("Help & Support"),
                     trailing: const Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
+                      onTap: ()=> Get.to(()=>const ContactUs()),
                     tileColor: Colors.white,
                   ),
                   const SizedBox(
@@ -222,7 +225,7 @@ class ProfileScreen extends StatelessWidget {
                     leading: Icon(Icons.settings),
                     title: Text("Settings"),
                     trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {},
+                      onTap: ()=> Get.to(()=>const AppSettings()),
                     tileColor: Colors.white,
                   ),
                   const SizedBox(

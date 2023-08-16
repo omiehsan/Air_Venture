@@ -17,10 +17,13 @@ class RateUs extends StatelessWidget {
           children: [
             Column(
               children: [
-                Image.asset(jBimanBanLogo),
+                SizedBox(
+                  height: 200,
+                    width: double.infinity,
+                    child: Image.asset(jOnBBanner)),
                 Text("Enjoying airVenture?",style: GoogleFonts.poppins(
                     fontWeight: FontWeight.normal, fontSize: 20)),
-                SizedBox(height: 8,),
+                const SizedBox(height: 8,),
                 Text("Please rate your experience",style: GoogleFonts.poppins(
                     fontWeight: FontWeight.normal, fontSize: 14)),
               ],
@@ -42,7 +45,7 @@ class RateUs extends StatelessWidget {
                         fontWeight: FontWeight.normal, fontSize: 16),
                   ),
                 ),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.40,
                   height: 40.0,

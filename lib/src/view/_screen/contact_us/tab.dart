@@ -27,9 +27,9 @@ class PrebookigTabBar extends StatelessWidget {
           ),
           bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.flight),text: 'Flights',),
-              Tab(icon: Icon(Icons.house_outlined), text: 'Hotels',),
-              Tab(icon: Icon(Icons.weekend),text: 'Packages',),
+              Tab(text: 'Flights',),
+              Tab( text: 'Hotels',),
+              Tab(text: 'Packages',),
             ],
           ),
         ),

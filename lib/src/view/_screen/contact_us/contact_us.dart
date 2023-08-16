@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hawai_jubu/src/view/_screen/contact_us/pre_bookings_qs.dart';
 import 'package:hawai_jubu/src/view/_screen/contact_us/tab.dart';
 import 'package:hawai_jubu/src/view/profile/update_profile.dart';
 import '../../../services/payment_card/add_card.dart';
@@ -31,7 +30,7 @@ class ContactUs extends StatelessWidget {
       ),
       backgroundColor: Colors.brown.shade50,
       body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
         child: ListView(
           children: [
             const Padding(

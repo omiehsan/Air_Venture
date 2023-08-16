@@ -34,7 +34,7 @@ class SearchResultsPage extends StatelessWidget {
                 var data = snapshot.data!.docs[index].data() as Map<String, dynamic>?;
 
                 if (data == null) {
-                  return ListTile(
+                  return const ListTile(
                     title: Text('No data available'),
                   );
                 }

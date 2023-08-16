@@ -27,7 +27,7 @@ class Arrival extends StatelessWidget {
                       fontWeight: FontWeight.w600, fontSize: 14),
                 ),
                 Text(
-                  "DEPARTS",
+                  "ARRIVALS",
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w600, fontSize: 14),
                 ),
