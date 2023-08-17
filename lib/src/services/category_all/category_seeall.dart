@@ -59,19 +59,19 @@ class DashCategoryWidgetSeeAll extends StatelessWidget {
                         left: -2,
                         child: Container(
                           width: MediaQuery.of(context).size.width*1,
-                          height: 30,
+                          height: 28,
                           color: Colors.blueGrey.withOpacity(0.4),
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 14.0),
+                            padding: const EdgeInsets.only(left: 10.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
                                   catItems[index].catName,
-                                  style: GoogleFonts.montserrat(
+                                  style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 17,
+                                    fontSize: 18,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -89,12 +89,12 @@ class DashCategoryWidgetSeeAll extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("${catItems[index].catJobs}",style: GoogleFonts.montserrat(
+                        Text("${catItems[index].catJobs}",style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w600, fontSize: 16,color: Colors.black54)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text("\$${catItems[index].catExperts}",style: GoogleFonts.montserrat(
+                            Text("\$${catItems[index].catExperts}",style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.bold, fontSize: 16,color: Colors.green)),
                             const Icon(Icons.arrow_forward_ios,color: Colors.green,size: 15,)
                           ],
