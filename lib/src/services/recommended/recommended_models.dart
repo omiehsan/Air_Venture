@@ -17,13 +17,14 @@ class DashRecommendedModels {
       this.recoLocation,
       this.onPress, {this.recoHotelCost}) {
     if (this.recoHotelCost == null) {
-      this.recoHotelCost = new Random().nextInt(650);
+      this.recoHotelCost = Random().nextInt(201) + 150;
     } else {
       this.recoHotelCost = this.recoHotelCost;
     }
   }
 
-  static List<DashRecommendedModels> recoItem = [
+
+static List<DashRecommendedModels> recoItem = [
     DashRecommendedModels(
         jLeMeridianType,
         jLeMeridianTitle,

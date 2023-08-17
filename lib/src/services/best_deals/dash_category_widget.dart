@@ -5,15 +5,15 @@ import 'categories.dart';
 class DashCategoriesModel {
   final String catName;
   final String catImage;
-  int? catExperts;
+  int? catPrice;
   String? catJobs;
   // final VoidCallback? onTap;
 
-  DashCategoriesModel(this.catName, this.catImage, {this.catExperts, this.catJobs}) {
-    if (this.catExperts == null) {
-      this.catExperts = new Random().nextInt(650);
+  DashCategoriesModel(this.catName, this.catImage, {this.catPrice, this.catJobs}) {
+    if (this.catPrice == null) {
+      this.catPrice = new Random().nextInt(650);
     } else {
-      this.catExperts = this.catExperts;
+      this.catPrice = this.catPrice;
     }
 
     // if (this.catJobs == null) {
@@ -24,8 +24,8 @@ class DashCategoriesModel {
   }
 
   static List<DashCategoriesModel> catItems = [
-    DashCategoriesModel(jCoxsBazar, jCoxsBazarImage, catExperts: 200, catJobs: "Sun,20 Aug" ),
-    DashCategoriesModel(jBandarban, jBandarbanImage,catJobs: "Mon,21 Aug",catExperts: 200,),
+    DashCategoriesModel(jCoxsBazar, jCoxsBazarImage, catPrice: 200, catJobs: "Sun,20 Aug" ),
+    DashCategoriesModel(jBandarban, jBandarbanImage,catJobs: "Mon,21 Aug",catPrice: 250,),
     DashCategoriesModel(jSylhet, jSylhetImage,catJobs: "Sun,20 Aug"),
     DashCategoriesModel(jBangkok, jBangkokImage,catJobs: "Mon,28 Aug"),
     DashCategoriesModel(jDubai, jDubaiImage,catJobs: "Sun,27 Aug"),

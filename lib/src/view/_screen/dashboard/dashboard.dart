@@ -6,7 +6,6 @@ import 'package:hawai_jubu/src/services/category_all/category_seeall.dart';
 import 'package:hawai_jubu/src/utils/constaints/images.dart';
 import 'package:hawai_jubu/src/utils/constaints/texts.dart';
 import 'package:hawai_jubu/src/view/_screen/hotel/hotel_repo.dart';
-import 'package:lottie/lottie.dart';
 import '../../../services/best_deals/category_widgets.dart';
 import '../../../services/recommended/recommended_widget.dart';
 import '../../navigations/navigation_bar/mid_bar.dart';
@@ -48,11 +47,12 @@ class DashBoard extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(right: 8),
             child: IconButton(
-              icon: Lottie.network(
-                'https://lottie.host/24de3145-2caf-4d01-be01-06c0cdcc4549/CKNcF5YXBg.json',
-                width: 27,
-                height: 27,
-              ),
+              icon: Icon(Icons.account_circle,size: 30,),
+              // Lottie.network(
+              //   'https://lottie.host/24de3145-2caf-4d01-be01-06c0cdcc4549/CKNcF5YXBg.json',
+              //   width: 27,
+              //   height: 27,
+              // ),
               splashRadius: 25,
               onPressed: () {
                 Navigator.push(
@@ -125,7 +125,7 @@ class DashBoard extends StatelessWidget {
             DashCategoryWidget(textTheme: Typography.blackCupertino),
             Padding(
               padding:
-                  const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
+              const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Row(
@@ -147,13 +147,49 @@ class DashBoard extends StatelessWidget {
                         ),
                       ),
                       onPressed: () => Get.to(() => HotelSeeAll(
-                  textTheme: Typography.blackCupertino)),
+                          textTheme: Typography.blackCupertino)),
                     ),
                   ],
                 ),
               ),
             ),
             const RecommendedFlightsWidgets(),
+            Padding(
+              padding:
+              const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      jHotelsForYou,
+                      style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.w600, fontSize: 18),
+                    ),
+                    TextButton(
+                      child: Text(
+                        jDashSeeall,
+                        style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 17,
+                          decoration: TextDecoration.underline,
+                          color: Colors.deepOrange,
+                        ),
+                      ),
+                      onPressed: () => Get.to(() => HotelSeeAll(
+                          textTheme: Typography.blackCupertino)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Row(
+              children: const [
+
+              ],
+            )
+
           ],
         ),
       ),

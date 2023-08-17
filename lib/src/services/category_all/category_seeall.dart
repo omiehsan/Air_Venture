@@ -93,7 +93,7 @@ class DashCategoryWidgetSeeAll extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text("\$${catItems[index].catExperts}",style: GoogleFonts.poppins(
+                            Text("\$${catItems[index].catPrice}",style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.bold, fontSize: 16,color: Colors.green)),
                             const Icon(Icons.arrow_forward_ios,color: Colors.green,size: 15,)
                           ],

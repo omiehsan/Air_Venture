@@ -6,6 +6,8 @@ import 'package:hawai_jubu/src/services/airport_cab/airport_cab_list.dart';
 import 'package:hawai_jubu/src/view/flights/status_tab.dart';
 import 'package:hawai_jubu/src/view/navigations/navigation_bar/widgets/mid_bar_widget.dart';
 
+import '../../_screen/package/package.dart';
+
 
 class MidBar extends StatelessWidget {
   const MidBar({Key? key}) : super(key: key);
@@ -40,15 +42,9 @@ class MidBar extends StatelessWidget {
               //     onTap: () {}),
               VerticalDivider(thickness: 1),
               MidBarWidget(
-                iconData: Icons.bar_chart,
-                text: "Fare Alerts",
-                onTap: () {},
-              ),
-              VerticalDivider(thickness: 1),
-              MidBarWidget(
-                iconData: FontAwesomeIcons.accusoft,
-                text: "Apply for visa",
-                onTap: () {},
+                iconData: FontAwesomeIcons.book,
+                text: "Packages",
+                onTap: ()  => Get.to(() => const Package()),
               ),
               VerticalDivider(thickness: 1),
               MidBarWidget(
@@ -58,8 +54,14 @@ class MidBar extends StatelessWidget {
               ),
               VerticalDivider(thickness: 1),
               MidBarWidget(
-                iconData: FontAwesomeIcons.book,
-                text: "Packages",
+                iconData: Icons.bar_chart,
+                text: "Fare Alerts",
+                onTap: () {},
+              ),
+              VerticalDivider(thickness: 1),
+              MidBarWidget(
+                iconData: FontAwesomeIcons.accusoft,
+                text: "Apply for visa",
                 onTap: () {},
               ),
             ],

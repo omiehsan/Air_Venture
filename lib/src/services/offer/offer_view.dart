@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hawai_jubu/src/services/ticket/trip_screen.dart';
-import 'dash_category_widget.dart';
+import 'offer_model.dart';
 
-class DashCategoryWidget extends StatelessWidget {
-  DashCategoryWidget({
+class FirstPackView extends StatelessWidget {
+  FirstPackView({
     Key? key,
     required this.textTheme,
   }) : super(key: key);
 
   final TextTheme textTheme;
-  final catItems = DashCategoriesModel.catItems;
+  final FirstPackItems = FirstPackModel.FirstPackItems;
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +19,12 @@ class DashCategoryWidget extends StatelessWidget {
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemCount: catItems.length,
+        itemCount: FirstPackItems.length,
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
-            final catName = catItems[index].catName;
-            print(catName);
-            Get.to(const Trip());
+            // final FirstPackName = catItems[index].FirstPackName;
+            // print(FirstPackName);
+            // Get.to(const Trip());
           },
           child: Card(
             shape: RoundedRectangleBorder(
@@ -44,7 +42,7 @@ class DashCategoryWidget extends StatelessWidget {
                     height: 120,
                     width: double.infinity,
                     child: Image.asset(
-                      catItems[index].catImage,
+                      FirstPackItems[index].FirstPackImage,
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -54,20 +52,20 @@ class DashCategoryWidget extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(catItems[index].catName,
+                        Text(FirstPackItems[index].FirstPackName,
                             textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w600, fontSize: 16),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis),
-                        Text("\$${catItems[index].catPrice}",
+                        Text("\$${FirstPackItems[index].FirstPackPrice}",
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
                                 color: Colors.green)),
-                        Text("${catItems[index].catJobs}",
+                        Text("${FirstPackItems[index].FirstPackJobs}",
                             style:
-                                const TextStyle(fontWeight: FontWeight.bold)),
+                            const TextStyle(fontWeight: FontWeight.bold)),
                       ],
                     ),
                   )

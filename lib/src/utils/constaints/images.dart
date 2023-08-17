@@ -8,7 +8,9 @@ const String jSplashItem = "assets/images/banners/hawaisrcitem.png";
 
 // OnBoardingScreen
 
-const String jOnBBanner = "assets/images/banners/app_logo.png";
+const String jOnBBanner = "assets/images/banners/applogo.png";
+const String jPackBanner = "assets/images/banners/goa1.jpg";
+
 
 
 // Flight Details

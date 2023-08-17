@@ -83,7 +83,7 @@ class _RecommendedFlightsWidgetsState extends State<RecommendedFlightsWidgets> {
                             ],
                           ),
                           Text(
-                            " \$400",
+                            "\$${recoItem[index].recoHotelCost}",
                             style: GoogleFonts.poppins(
                               fontWeight: FontWeight.bold,
                             ),
