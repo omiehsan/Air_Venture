@@ -1,8 +1,16 @@
+// ... Existing imports ...
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+
+import '../../../controller/authentication/controllers/ticketcontroller.dart';
 import '../../../controller/authentication/models/flights_model.dart';
-import '../../flights/destination_details.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
+
+import '../../../controller/authentication/models/movedticketmodel.dart';
+import '../../../services/airport_cab/cab_details.dart';
 
 class Flight_Result extends StatelessWidget {
   final List<FlightSearchModel> searchResults;
@@ -11,11 +19,19 @@ class Flight_Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TicketController _ticketController = TicketController();
+    final User? user = FirebaseAuth.instance.currentUser;
+    final String loggedInUserEmail = user?.email ?? "unknown@example.com";
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("Departing Flights",
-            style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.bold, fontSize: 17)),
+        title: Text(
+          "Departing Flights",
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.bold,
+            fontSize: 17,
+          ),
+        ),
         centerTitle: true,
         elevation: 3,
         flexibleSpace: Container(
@@ -61,7 +77,6 @@ class Flight_Result extends StatelessWidget {
                         Row(
                           children: [
                             InkWell(
-                              // onTap: () {},
                               child: Material(
                                 borderRadius: BorderRadius.circular(10),
                                 elevation: 10,
@@ -72,25 +87,23 @@ class Flight_Result extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10),
                                     image: const DecorationImage(
                                       fit: BoxFit.fitHeight,
-                                      image:
-                                          AssetImage("assets/images/img_1.png"),
+                                      image: AssetImage("assets/images/img_1.png"),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
+                            SizedBox(width: 10),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  '${flight.airline}',
+                                  flight.airline ?? '', // Handle nullable value
                                   style: GoogleFonts.poppins(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.bold),
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                                 Text(
                                   "BBDA-189",
@@ -106,19 +119,22 @@ class Flight_Result extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
-                              '\$${flight.price}',
+                              '\$${flight.price ?? 0}', // Handle nullable value
                               style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green,
-                                  fontSize: 13),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green,
+                                fontSize: 13,
+                              ),
                             ),
                             Text(
-                              '${flight.flightClass}',
+                              flight.flightClass ?? '', // Handle nullable value
                               style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.normal, fontSize: 14),
+                                fontWeight: FontWeight.normal,
+                                fontSize: 14,
+                              ),
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -127,8 +143,7 @@ class Flight_Result extends StatelessWidget {
                     child: Divider(thickness: 1),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15.0, right: 15, bottom: 12),
+                    padding: const EdgeInsets.only(left: 15.0, right: 15, bottom: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -136,7 +151,7 @@ class Flight_Result extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '${flight.fromDestination}',
+                              flight.fromDestination ?? '', // Handle nullable value
                               style: GoogleFonts.poppins(
                                 fontSize: 14,
                               ),
@@ -148,7 +163,7 @@ class Flight_Result extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              '${flight.toDestination}',
+                              flight.toDestination ?? '', // Handle nullable value
                               style: GoogleFonts.poppins(
                                 fontSize: 14,
                               ),
@@ -162,7 +177,9 @@ class Flight_Result extends StatelessWidget {
                             Text(
                               '$formattedDate',
                               style: GoogleFonts.poppins(
-                                  fontSize: 14, fontWeight: FontWeight.normal),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
                             ),
                             Center(
                               child: Transform.rotate(
@@ -177,7 +194,9 @@ class Flight_Result extends StatelessWidget {
                             Text(
                               '$formattedDate',
                               style: GoogleFonts.montserrat(
-                                  fontSize: 14, fontWeight: FontWeight.normal),
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
                             ),
                           ],
                         ),
@@ -188,27 +207,58 @@ class Flight_Result extends StatelessWidget {
                             Text(
                               "10:40",
                               style: GoogleFonts.poppins(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(right: 8.0),
                               child: Text(
-                                '${flight.duration}',
+                                flight.duration ?? '', // Handle nullable value
                                 style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
                               ),
                             ),
                             Text(
                               "1:05",
                               style: GoogleFonts.poppins(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
+                        Center(
+                          child: ElevatedButton(
+                            onPressed: () async {
+                              await _ticketController.moveTicketToNewDatabase(
+                                loggedInUserEmail,
+                                MovedTicketModel(
+                                  userEmail: loggedInUserEmail,
+                                  airline: flight.airline ?? '', // Handle nullable value
+                                  fromDestination: flight.fromDestination ?? '', // Handle nullable value
+                                  toDestination: flight.toDestination ?? '', // Handle nullable value
+                                  price: flight.price ?? 0, // Handle nullable value
+                                  date: flight.date ?? DateTime.now(), // Handle nullable value
+                                  flightClass: flight.flightClass ?? '', // Handle nullable value
+                                  duration: flight.duration ?? '', // Handle nullable value
+                                ),
+                              );
+
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Purchase Success'),
+                                ),
+                              );
+                            },
+                            child: Text('Purchase Ticket'),
+                          ),
+                        ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
