@@ -5,7 +5,7 @@ const String TTS_AppName_Alt_2 = "./JAV_";
 const String TTS_TagLine = "You Just Pass. \nWe Handle The Rest";
 
 // Dashboard Screen Text
-const String jDashPopular="Popular Flights";
+const String jDashPopular="Cheapest Fare";
 const String jHotelsForYou="Hotels For You";
 
  const String jDashSeeall="See all";

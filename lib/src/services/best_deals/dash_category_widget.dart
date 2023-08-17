@@ -6,7 +6,7 @@ class DashCategoriesModel {
   final String catName;
   final String catImage;
   int? catExperts;
-  int? catJobs;
+  String? catJobs;
   // final VoidCallback? onTap;
 
   DashCategoriesModel(this.catName, this.catImage, {this.catExperts, this.catJobs}) {
@@ -16,24 +16,24 @@ class DashCategoriesModel {
       this.catExperts = this.catExperts;
     }
 
-    if (this.catJobs == null) {
-      this.catJobs = new Random().nextInt(89);
-    } else {
-      this.catJobs = this.catJobs;
-    }
+    // if (this.catJobs == null) {
+    //   this.catJobs = new Random().nextInt(89);
+    // } else {
+    //   this.catJobs = this.catJobs;
+    // }
   }
 
   static List<DashCategoriesModel> catItems = [
-    DashCategoriesModel(Ac_Servicing_Title, Ac_Services_Image, catExperts: 19, catJobs: 657),
-    DashCategoriesModel(Appliance_Title, Appliance_Image),
-    DashCategoriesModel(Car_Title, Car_Image),
-    DashCategoriesModel(Electronics_Title, Electronics_Image),
-    DashCategoriesModel(Painting_Title, Painting_Image),
-    DashCategoriesModel(Plumbing_Title, Plumbing_Image),
-    DashCategoriesModel(Motorcycle_Service_Title, Motorcycle_Service_Image),
-    DashCategoriesModel(Mobile_Servicing_Title, Mobile_Servicing_Image),
-    DashCategoriesModel(Computer_Servicing_Title, Computer_Servicing_Image),
-    DashCategoriesModel(Moving_Servicing_Title, Moving_Servicing_Image),
+    DashCategoriesModel(jCoxsBazar, jCoxsBazarImage, catExperts: 200, catJobs: "Sun,20 Aug" ),
+    DashCategoriesModel(jBandarban, jBandarbanImage,catJobs: "Mon,21 Aug",catExperts: 200,),
+    DashCategoriesModel(jSylhet, jSylhetImage),
+    DashCategoriesModel(jBangkok, jBangkokImage),
+    DashCategoriesModel(jDubai, jDubaiImage),
+    DashCategoriesModel(jDelhi, jDelhiImage),
+    DashCategoriesModel(jMalaysiya, jMalaysiyaImage),
+    DashCategoriesModel(jLadak, jLadakImage),
+    DashCategoriesModel(jBali, jBaliImage),
+    DashCategoriesModel(jMumbai, jMumbaiImage),
 
   ];
 }

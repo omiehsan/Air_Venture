@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hawai_jubu/src/services/recommended/recommend.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/services/ticket/trip_screen.dart';
 import 'dash_category_widget.dart';
 
@@ -43,7 +43,10 @@ class DashCategoryWidget extends StatelessWidget {
                   SizedBox(
                     height: 120,
                     width: double.infinity,
-                    child: Image.asset(catItems[index].catImage),
+                    child: Image.asset(
+                      catItems[index].catImage,
+                      fit: BoxFit.fill,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
@@ -51,21 +54,17 @@ class DashCategoryWidget extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("${catItems[index].catExperts}",
-                            style:
-                                const TextStyle(fontWeight: FontWeight.bold)),
-                        SizedBox(
-                          height: 4,
-                        ),
                         Text(catItems[index].catName,
                             textAlign: TextAlign.center,
-                            style:
-                                textTheme.headline6?.apply(color: Colors.black),
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.w600, fontSize: 16),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis),
-                        SizedBox(
-                          height: 4,
-                        ),
+                        Text("\$${catItems[index].catExperts}",
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.green)),
                         Text("${catItems[index].catJobs}",
                             style:
                                 const TextStyle(fontWeight: FontWeight.bold)),

@@ -1,58 +1,32 @@
 /* -- List of Item Categories -- */
 
-const String Ac_Servicing_Title = "Bankok";
-const String Ac_Services_Image = "assets/images/img_1.png";
+const String jBangkok = "Bankok";
+const String jBangkokImage = "assets/images/destination/bangkok.png";
 
-const String Appliance_Title = "Dubai";
-const String Appliance_Image = "assets/images/img_1.png";
+const String jDubai = "Dubai";
+const String jDubaiImage = "assets/images/destination/Dubai.png";
 
-const String Car_Title = "Delhi";
-const String Car_Image = "assets/images/img_1.png";
+const String jDelhi = "Delhi";
+const String jDelhiImage = "assets/images/destination/delhi1.png";
 
-const String Electronics_Title = "Mumbai";
-const String Electronics_Image = "assets/images/img_1.png";
+const String jMumbai = "Mumbai";
+const String jMumbaiImage = "assets/images/destination/mumbai.png";
 
-const String Painting_Title = "Kolkata";
-const String Painting_Image = "assets/images/tashrif alive(4).jpg";
+const String jCoxsBazar = "Cox's Bazar";
+const String jCoxsBazarImage = "assets/images/destination/CoxsBazar.png";
 
-const String Plumbing_Title = "Cox's Bazar";
-const String Plumbing_Image = "assets/images/1mg3.png";
+const String jBali = "Bali";
+const String jBaliImage = "assets/images/destination/bali.png";
 
-const String Motorcycle_Service_Title = "Shiliguri";
-const String Motorcycle_Service_Image = "assets/images/sit.jpg";
+const String jLadak = "Ladak";
+const String jLadakImage = "assets/images/destination/img_destination_lombok3.jpeg";
 
-const String Mobile_Servicing_Title = "Ladak";
-const String Mobile_Servicing_Image = "assets/images/three.jpg";
+const String jBandarban = "Bandarban";
+const String jBandarbanImage = "assets/images/destination/img_destination_bandung.jpeg";
 
-const String Computer_Servicing_Title = "Japan";
-const String Computer_Servicing_Image = "assets/images/three.jpg";
+const String jSylhet = "Sylhet";
+const String jSylhetImage = "assets/images/destination/sylhet.png";
 
-const String Moving_Servicing_Title = "Paris";
-const String Moving_Servicing_Image = "assets/images/three.jpg";
+const String jMalaysiya = "Malaysiya";
+const String jMalaysiyaImage = "assets/images/destination/malaysia.jpeg";
 
-// const String Moving_Servicing_Title = "SEO";
-// const String SEO_Image = "assets/images/dashboard/categories/seo.jpeg";
-//
-// const String Social_Title = "Social";
-// const String Social_Image = "assets/images/dashboard/categories/social.jpeg";
-//
-// const String Video_Animation_Title = "Video & Animation";
-// const String Video_Animation_Image = "assets/images/dashboard/categories/video_animation.png";
-//
-// const String Music_Audio_Title = "Music & Audio";
-// const String Music_Audio_Image = "assets/images/dashboard/categories/music_audio.png";
-//
-// const String Voice_Over_Title = "Voice Over";
-// const String Voice_Over_Image = "assets/images/dashboard/categories/voiceover.jpeg";
-//
-// const String Writing_Translatation_Title = "Writing & Translatation";
-// const String Writing_Translatation_Image = "assets/images/dashboard/categories/writing_translation.jpeg";
-//
-// const String Data_Entry_Title = "Data Entry";
-// const String Data_Entry_Image = "assets/images/dashboard/categories/data-entry.jpeg";
-//
-// const String Lifestyle_Title = "Lifestyle";
-// const String Lifestyle_Image = "assets/images/dashboard/categories/lifestyle.png";
-//
-// const String Business_Title = "Business";
-// const String Business_Image = "assets/images/dashboard/categories/business.png";
