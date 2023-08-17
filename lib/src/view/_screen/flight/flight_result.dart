@@ -1,5 +1,3 @@
-// ... Existing imports ...
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -99,14 +97,14 @@ class Flight_Result extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  flight.airline ?? '', // Handle nullable value
+                                  flight.airline ?? '', // handle nullable value
                                   style: GoogleFonts.poppins(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 Text(
-                                  "BBDA-189",
+                                 '${flight.fno}',
                                   style: GoogleFonts.poppins(
                                     fontSize: 13,
                                   ),
@@ -205,7 +203,7 @@ class Flight_Result extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "10:40",
+                              '${flight.arrival}',
                               style: GoogleFonts.poppins(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -222,7 +220,7 @@ class Flight_Result extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              "1:05",
+                              '${flight.departure}',
                               style: GoogleFonts.poppins(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -248,12 +246,12 @@ class Flight_Result extends StatelessWidget {
                               );
 
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                   content: Text('Purchase Success'),
                                 ),
                               );
                             },
-                            child: Text('Purchase Ticket'),
+                            child: const Text('Purchase Ticket'),
                           ),
                         ),
                       ],

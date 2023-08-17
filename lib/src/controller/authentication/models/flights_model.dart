@@ -5,6 +5,9 @@ class FlightSearchModel {
   String? duration;
   String? airline;
   double? price;
+  String? fno;
+  String? arrival;
+  String? departure;
   final String fromDestination;
   final String toDestination;
   final String flightClass;
@@ -17,6 +20,9 @@ class FlightSearchModel {
     required this.date,
     required this.flightClass,
     this.duration,
+    this.arrival,
+    this.departure,
+    this.fno,
     this.price,
     this.airline,
   });
@@ -31,6 +37,9 @@ class FlightSearchModel {
       toDestination: data['To'],
       flightClass: data['Class'],
       duration: data['Duration'],
+      fno: data['fno'],
+      arrival: data['arrival'],
+      departure: data['departure'],
       price: data['Price']?.toDouble(),
       airline: data['Airline'],
       date: (data['Date'] as Timestamp).toDate(),
