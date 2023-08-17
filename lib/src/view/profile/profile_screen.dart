@@ -5,6 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hawai_jubu/src/services/ticket/boughtticketdetails.dart';
+import 'package:hawai_jubu/src/services/ticket/currentuserview.dart';
 import 'package:hawai_jubu/src/services/ticket/ticket_list.dart';
 import 'package:hawai_jubu/src/view/_screen/contact_us/contact_us.dart';
 import 'package:hawai_jubu/src/view/flights/destination_list.dart';
@@ -21,6 +23,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    String loggedInUserEmail = "user@example.com"; // Replace with the actual user's email
 
     return Scaffold(
       backgroundColor: Colors.brown.shade50,
@@ -179,9 +182,10 @@ class ProfileScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ProfileWidget(
-                            title: "Tickets",
-                            icon: Icons.airplane_ticket_sharp,
-                            onTap: ()=> Get.to(()=>const TicketList())),
+                          title: "Tickets",
+                          icon: Icons.airplane_ticket_sharp,
+                          onTap: () => Get.to(() => BoughtTicketDetails()),
+                        ),
                         SizedBox(),
                         ProfileWidget(
                             title: "Wishlist",

@@ -6,6 +6,7 @@ import 'package:hawai_jubu/src/services/airport_cab/airport_cab_list.dart';
 import 'package:hawai_jubu/src/view/flights/status_tab.dart';
 import 'package:hawai_jubu/src/view/navigations/navigation_bar/widgets/mid_bar_widget.dart';
 
+import '../../../services/ticket/currentuserview.dart';
 import '../../_screen/package/package.dart';
 
 
@@ -50,13 +51,13 @@ class MidBar extends StatelessWidget {
               MidBarWidget(
                 iconData: Icons.groups,
                 text: "Group Booking",
-                onTap: () {},
+                onTap: ()  => Get.to(() => CurrentUserView()),
               ),
               VerticalDivider(thickness: 1),
               MidBarWidget(
                 iconData: Icons.bar_chart,
                 text: "Fare Alerts",
-                onTap: () {},
+                onTap: ()  {},
               ),
               VerticalDivider(thickness: 1),
               MidBarWidget(
