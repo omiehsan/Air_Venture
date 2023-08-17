@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -17,9 +18,10 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       leading: IconButton(
         onPressed: onTap,
-        icon: const Icon(Icons.arrow_back_ios_new),
+        icon: const Icon(Icons.arrow_back_rounded),
       ),
-      title: Text(title,textAlign: TextAlign.center),
+      title: Text(title,textAlign: TextAlign.center, style: GoogleFonts.montserrat(
+          fontWeight: FontWeight.bold, fontSize: 17)),
       centerTitle: true,
       flexibleSpace: Container(
         // Add a flexibleSpace to set the gradient background

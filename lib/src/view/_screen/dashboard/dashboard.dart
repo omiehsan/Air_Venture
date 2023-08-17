@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/services/category_all/category_seeall.dart';
 import 'package:hawai_jubu/src/utils/constaints/images.dart';
 import 'package:hawai_jubu/src/utils/constaints/texts.dart';
+import 'package:hawai_jubu/src/view/_screen/hotel/hotel_repo.dart';
 import 'package:lottie/lottie.dart';
 import '../../../services/best_deals/category_widgets.dart';
 import '../../../services/recommended/recommended_widget.dart';
@@ -145,7 +146,8 @@ class DashBoard extends StatelessWidget {
                           color: Colors.deepOrange,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () => Get.to(() => HotelSeeAll(
+                  textTheme: Typography.blackCupertino)),
                     ),
                   ],
                 ),

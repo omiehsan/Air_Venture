@@ -21,7 +21,7 @@ class DashCategoryWidgetSeeAll extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TopBar(
-        title: 'Popular Flights',
+        title: 'Fare for you',
         icon: Icons.arrow_back_rounded,
         onTap: Get.back,
       ),
@@ -83,14 +83,13 @@ class DashCategoryWidgetSeeAll extends StatelessWidget {
                     ],
                   ),
 
-
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("${catItems[index].catJobs}",style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w600, fontSize: 16,color: Colors.black54)),
+                            fontWeight: FontWeight.w500, fontSize: 16,color: Colors.black87)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [

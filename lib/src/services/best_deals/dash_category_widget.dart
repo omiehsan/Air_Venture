@@ -26,14 +26,14 @@ class DashCategoriesModel {
   static List<DashCategoriesModel> catItems = [
     DashCategoriesModel(jCoxsBazar, jCoxsBazarImage, catExperts: 200, catJobs: "Sun,20 Aug" ),
     DashCategoriesModel(jBandarban, jBandarbanImage,catJobs: "Mon,21 Aug",catExperts: 200,),
-    DashCategoriesModel(jSylhet, jSylhetImage),
-    DashCategoriesModel(jBangkok, jBangkokImage),
-    DashCategoriesModel(jDubai, jDubaiImage),
-    DashCategoriesModel(jDelhi, jDelhiImage),
-    DashCategoriesModel(jMalaysiya, jMalaysiyaImage),
-    DashCategoriesModel(jLadak, jLadakImage),
-    DashCategoriesModel(jBali, jBaliImage),
-    DashCategoriesModel(jMumbai, jMumbaiImage),
+    DashCategoriesModel(jSylhet, jSylhetImage,catJobs: "Sun,20 Aug"),
+    DashCategoriesModel(jBangkok, jBangkokImage,catJobs: "Mon,28 Aug"),
+    DashCategoriesModel(jDubai, jDubaiImage,catJobs: "Sun,27 Aug"),
+    DashCategoriesModel(jDelhi, jDelhiImage,catJobs: "Tue,22 Aug"),
+    DashCategoriesModel(jMalaysiya, jMalaysiyaImage,catJobs: "Mon,21 Aug"),
+    DashCategoriesModel(jLadak, jLadakImage,catJobs: "Tue,29 Aug"),
+    DashCategoriesModel(jBali, jBaliImage,catJobs: "Fri,25 Aug"),
+    DashCategoriesModel(jMumbai, jMumbaiImage,catJobs: "Thu,24 Aug"),
 
   ];
 }
