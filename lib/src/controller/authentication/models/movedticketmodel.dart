@@ -1,5 +1,5 @@
 class MovedTicketModel {
-  final String userEmail; // Add this field
+  final String userEmail;
   final String airline;
   final String fromDestination;
   final String toDestination;
@@ -7,6 +7,9 @@ class MovedTicketModel {
   final DateTime date;
   final String flightClass;
   final String duration;
+  final String fno;
+  final String arrival;
+  final String departure;
 
   MovedTicketModel({
     required this.userEmail,
@@ -17,9 +20,14 @@ class MovedTicketModel {
     required this.date,
     required this.flightClass,
     required this.duration,
+    required this.fno,
+    required this.arrival,
+    required this.departure,
+
   });
 
   // Convert the model to a map for Firestore
+
   Map<String, dynamic> toMap() {
     return {
       'userEmail': userEmail,
@@ -30,6 +38,9 @@ class MovedTicketModel {
       'date': date,
       'flightClass': flightClass,
       'duration': duration,
+      'fno': fno,
+      'arrival': arrival,
+      'departure': departure,
     };
   }
 
@@ -44,6 +55,9 @@ class MovedTicketModel {
       date: snapshot['date'].toDate(),
       flightClass: snapshot['flightClass'],
       duration: snapshot['duration'],
+      fno: snapshot['fno'],
+      departure: snapshot['departure'],
+      arrival: snapshot['arrival'],
     );
   }
 }

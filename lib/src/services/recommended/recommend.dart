@@ -60,6 +60,10 @@ const String jRaffleThePalmType = "Hotel";
 const String jRaffleThePalmView = "assets/images/hotels/raffle_the_palm/raffle_the_palm_veiw.png";
 const String jRaffleThePalmTitle = " Raffle The Palm";
 const String jRaffleThePalmLoc = "Dubai";
+const String jRaffleThePalmSide = "assets/images/hotels/raffle_the_palm/raffle_the_palm1.png";
+const String jRaffleThePalmSide2 = "assets/images/hotels/raffle_the_palm/raffle_the_palm2.png";
+const String jRaffleThePalmSide3 = "assets/images/hotels/raffle_the_palm/raffle_the_palm3.png";
+
 
 // Hotel MarinaBaySands
 const String jMarinaBaySandsType = "Hotel";

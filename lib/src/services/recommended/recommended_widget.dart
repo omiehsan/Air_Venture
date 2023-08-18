@@ -32,7 +32,7 @@ class _RecommendedFlightsWidgetsState extends State<RecommendedFlightsWidgets> {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
-            CategorySheet.buildShowModalBottomSheet(context);
+            // CategorySheet.buildShowModalBottomSheet(context);
           },
           child: Card(
             elevation: 5,

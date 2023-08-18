@@ -1,8 +1,8 @@
 // SplashScreen Text
-const String TTS_AppName = "airVenture";
+const String airVenture = "airVenture";
 const String TTS_AppName_Alt = "/airventure:";
 const String TTS_AppName_Alt_2 = "./JAV_";
-const String TTS_TagLine = "You Just Pass. \nWe Handle The Rest";
+const String air_tagline = "You Just Pass. \nWe Handle The Rest";
 
 // Dashboard Screen Text
 const String jDashPopular="Cheapest Fare";

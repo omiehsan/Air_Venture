@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/services/offer/offer_view.dart';
 import 'package:hawai_jubu/src/utils/constaints/images.dart';
 

@@ -58,7 +58,7 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(TTS_AppName,
+                Text(airVenture,
                     style: Theme.of(context).textTheme.subtitle2!.copyWith(
                           fontSize: 24,
                           color: Colors.yellow,
@@ -77,7 +77,7 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(TTS_TagLine,
+                Text(air_tagline,
                     style: Theme.of(context).textTheme.headline2!.copyWith(
                           fontSize: 32.0,
                           color: Colors.black87,
@@ -90,12 +90,13 @@ class SplashScreen extends StatelessWidget {
           JAV_FadeInOutAnim(
             duration: 800,
             animPos: TTS_AnimatePosition(
-              bottomBefore: 430,
-              bottomAfter: 400,
+              bottomBefore: 230,
+              bottomAfter: 200,
             ),
             child: SizedBox(
               width: deviceWidth * 1,
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(

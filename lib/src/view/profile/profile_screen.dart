@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -6,14 +5,14 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hawai_jubu/src/services/ticket/boughtticketdetails.dart';
-import 'package:hawai_jubu/src/services/ticket/currentuserview.dart';
-import 'package:hawai_jubu/src/services/ticket/ticket_list.dart';
+import 'package:hawai_jubu/src/services/ticket/ticket_view.dart';
 import 'package:hawai_jubu/src/view/_screen/contact_us/contact_us.dart';
 import 'package:hawai_jubu/src/view/flights/destination_list.dart';
 import 'package:hawai_jubu/src/view/profile/profile_widget.dart';
 import 'package:hawai_jubu/src/view/profile/update_profile.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import '../../repository/auth_repo/auth_repo.dart';
+import '../../services/ticket/currentuserwidget.dart';
 import '../../view/navigations/navigation_bar/bottom_bar.dart';
 import '../_screen/more_views/app_settings.dart';
 
@@ -23,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
-    String loggedInUserEmail = "user@example.com"; // Replace with the actual user's email
+    String loggedInUserEmail = "user@example.com";
 
     return Scaffold(
       backgroundColor: Colors.brown.shade50,
@@ -84,7 +83,7 @@ class ProfileScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Stack(
@@ -132,13 +131,14 @@ class ProfileScreen extends StatelessWidget {
                         const SizedBox(
                           height: 5,
                         ),
-                        Text(
-                          " Tashrif Jubaer",
-                          style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16,
-                          ),
-                        ),
+                        CurrentUserWidget(),
+                        // Text(
+                        //   " Tashrif Jubaer",
+                        //   style: GoogleFonts.montserrat(
+                        //     fontWeight: FontWeight.w700,
+                        //     fontSize: 16,
+                        //   ),
+                        // ),
                       ],
                     ),
                     FloatingActionButton(
@@ -202,7 +202,8 @@ class ProfileScreen extends StatelessWidget {
                         ProfileWidget(
                             title: "Memories",
                             icon: Icons.history,
-                            onTap: () {}),
+                          onTap: () => Get.to(() => TicketView()),
+                        ),
                         SizedBox(),
                         ProfileWidget(
                             title: "Add Card",

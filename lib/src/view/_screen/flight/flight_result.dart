@@ -203,7 +203,7 @@ class Flight_Result extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '${flight.arrival}',
+                              flight.arrival ?? '',
                               style: GoogleFonts.poppins(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -220,7 +220,7 @@ class Flight_Result extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              '${flight.departure}',
+                              flight.departure ?? '',
                               style: GoogleFonts.poppins(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -234,6 +234,7 @@ class Flight_Result extends StatelessWidget {
                               await _ticketController.moveTicketToNewDatabase(
                                 loggedInUserEmail,
                                 MovedTicketModel(
+
                                   userEmail: loggedInUserEmail,
                                   airline: flight.airline ?? '', // Handle nullable value
                                   fromDestination: flight.fromDestination ?? '', // Handle nullable value
@@ -241,7 +242,10 @@ class Flight_Result extends StatelessWidget {
                                   price: flight.price ?? 0, // Handle nullable value
                                   date: flight.date ?? DateTime.now(), // Handle nullable value
                                   flightClass: flight.flightClass ?? '', // Handle nullable value
-                                  duration: flight.duration ?? '', // Handle nullable value
+                                  duration: flight.duration ?? '',
+                                  fno: flight.fno??'',// Handle nullable value
+                                  arrival: flight.arrival??'',// Handle nullable value
+                                  departure: flight.departure??'',// Handle nullable value
                                 ),
                               );
 

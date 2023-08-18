@@ -28,7 +28,7 @@ class CategorySheet{
                   topRight: Radius.circular(10),
                 ),
                 child: Image.asset(
-                  jLeMeridianView,
+                  jRaffleThePalmView,
                   fit: BoxFit.cover,
                   height: MediaQuery.of(context).size.height * 0.25,
                   width: double.infinity,
@@ -46,10 +46,10 @@ class CategorySheet{
               Padding(
                 padding: const EdgeInsets.only(left: 10,right: 10),
                 child: Text(
-                  "Aboutfgdtjgfhdsfstystrsyyjrtyrrgfdgtgdffy",
+                  "Along the beach on Palm Jumeirah island, this posh luxury hotel is 12 km from Dubai Marina and 41 km from Dubai International Airport.",
                   maxLines: 3,
-                  style: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.normal, fontSize: 14),
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.normal, fontSize: 12),
                 ),
               ),
               Padding(
@@ -68,7 +68,7 @@ class CategorySheet{
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
-                        jLeMeridianView,
+                        jRaffleThePalmSide,
                         fit: BoxFit.fill,
                         height: 55,
                         width: 55,
@@ -80,7 +80,7 @@ class CategorySheet{
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
-                        jLeMeridianView,
+                        jRaffleThePalmSide2,
                         fit: BoxFit.fill,
                         height: 55,
                         width: 55,
@@ -92,7 +92,7 @@ class CategorySheet{
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
-                        jLeMeridianView,
+                        jRaffleThePalmSide3,
                         fit: BoxFit.fill,
                         height: 55,
                         width: 55,
@@ -124,19 +124,21 @@ class CategorySheet{
                             SizedBox(
                               width: 10,
                             ),
-                            Text("gfshxjsfx"),
+                            Text("Jazz bar",style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w600, fontSize: 12),),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height:5,
                         ),
                         Row(
                           children: [
-                            Icon(FontAwesomeIcons.solidCircleCheck,color: Colors.orange,),
-                            SizedBox(
+                            const Icon(FontAwesomeIcons.solidCircleCheck,color: Colors.orange,),
+                            const SizedBox(
                               width: 10,
                             ),
-                            Text("gfshxjsfx"),
+                            Text("3 Upscale Restaurants",style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w600, fontSize: 12),),
                           ],
                         )
                       ],
@@ -154,7 +156,8 @@ class CategorySheet{
                             SizedBox(
                               width: 10,
                             ),
-                            Text("gfshxjsfx"),
+                            Text("Spa",style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w600, fontSize: 12),),
                           ],
                         ),
                         SizedBox(
@@ -166,7 +169,8 @@ class CategorySheet{
                             SizedBox(
                               width: 10,
                             ),
-                            Text("gfshxjsfx"),
+                            Text("Infinity Pool",style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w600, fontSize: 12),),
                           ],
                         )
                       ],

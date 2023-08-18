@@ -34,9 +34,9 @@ class DashCategoryWidgetSeeAll extends StatelessWidget {
           itemCount: catItems.length,
           itemBuilder: (context, index) => GestureDetector(
             onTap: () {
-              final catName = catItems[index].catName;
-              print(catName);
-              Get.to(const Trip());
+              // final catName = catItems[index].catName;
+              // print(catName);
+              // Get.to(const Trip());
             },
             child: Card(
               elevation: 5,

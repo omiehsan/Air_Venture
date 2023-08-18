@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hawai_jubu/src/services/recommended/recommend.dart';
 
+
 class DashRecommendedModels {
   final String recoType;
   final String recoName;
@@ -29,7 +30,7 @@ static List<DashRecommendedModels> recoItem = [
         jLeMeridianType,
         jLeMeridianTitle,
         jLeMeridianView,
-        jLeMeridianLoc, null),
+        jLeMeridianLoc, (){}),
 
     DashRecommendedModels(
         jInterContinentalType,
