@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hawai_jubu/firebase_options.dart';
 import 'package:hawai_jubu/src/repository/auth_repo/auth_repo.dart';
+import 'package:hawai_jubu/src/services/airport_cab/studentid.dart';
 import 'package:hawai_jubu/src/view/_screen/splash_screen/splash_screen.dart';
 
 void main() {
@@ -20,14 +21,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-          brightness: Brightness.light, primarySwatch: Colors.deepOrange),
-      darkTheme: ThemeData(brightness: Brightness.dark),
-      themeMode: ThemeMode.system,
-      home: const SplashScreen(),
+      // theme: ThemeData(
+      //     brightness: Brightness.light, primarySwatch: Colors.deepOrange),
+      // darkTheme: ThemeData(brightness: Brightness.dark),
+      // themeMode: ThemeMode.system,
+      home: Home(),
     );
   }
 }
