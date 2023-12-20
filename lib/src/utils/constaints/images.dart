@@ -23,12 +23,10 @@ const String jBimanBanLogo ="assets/images/airline_logo/BBA.png";
 
 // Flight Banners
 
-const String jBanner = "assets/images/benefits/slider (1).png";
-const String jBanner2 = "assets/images/benefits/slider (2).png";
-const String jBanner3 = "assets/images/benefits/slider (3).png";
-const String jBanner4 = "assets/images/benefits/slider (4).png";
-const String jBanner5 = "assets/images/benefits/slider (5).png";
-const String jBanner6 = "assets/images/benefits/slider (6).png";
+const String jBanner = "assets/images/categories/cyberpunk.png";
+const String jBanner2 = "assets/images/categories/ff.png";
+const String jBanner3 = "assets/images/categories/mobile_legend.png";
+const String jBanner4 = "assets/images/categories/pubg.png";
 
 // App Icon
 

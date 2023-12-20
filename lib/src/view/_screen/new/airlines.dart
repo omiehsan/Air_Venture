@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:hawai_jubu/src/services/recommended/recommend.dart';
 import '../../../utils/constaints/images.dart';
 
 final List<Widget> carouselItems = [
@@ -8,8 +7,6 @@ final List<Widget> carouselItems = [
   Image.asset(jBanner2),
   Image.asset(jBanner3),
   Image.asset(jBanner4),
-  Image.asset(jBanner5),
-  Image.asset(jBanner6),
 ];
 class MyCarousel extends StatelessWidget {
   const MyCarousel({super.key});
@@ -22,7 +19,7 @@ class MyCarousel extends StatelessWidget {
         autoPlay: true,
         enlargeCenterPage: true,
         aspectRatio: 16 /9,
-        autoPlayInterval: const Duration(seconds: 2),
+        autoPlayInterval: const Duration(seconds: 3),
       ),
       items: carouselItems,
     );

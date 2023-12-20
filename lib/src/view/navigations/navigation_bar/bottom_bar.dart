@@ -6,7 +6,6 @@ import '../../_screen/contact_us/contact_us.dart';
 import '../../_screen/dashboard/dashboard.dart';
 import '../../_screen/more_views/more_view.dart';
 
-
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
 
@@ -39,27 +38,31 @@ class _BottomBarState extends State<BottomBar> {
         backgroundColor: Colors.white54,
         currentIndex: selectedIndex,
         onTap: _onItemTapped,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        selectedItemColor: Colors.orange.shade900,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedItemColor: Colors.purple.shade800,
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.blueGrey,
-        items: const [
+        items: [
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
               label: "Home"),
+
           BottomNavigationBarItem(
-              icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
-              label: "Search"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.perm_phone_msg_sharp),
-            activeIcon: Icon(Icons.perm_phone_msg),
-            label: 'Contact Us',
+            icon: Icon(Icons.add_circle_outline_outlined),
+            activeIcon: Icon(Icons.add_circle_outlined),
+            label: 'Top-up',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.more_vert), label: "Profile"),
+            icon: Icon(Icons.person),
+            activeIcon: Icon(Icons.account_circle),
+            label: 'Profile',
+          ),
+          // BottomNavigationBarItem(
+          //     icon: Image.asset('assets/images/icon/more.png',height: 40,),
+          //     activeIcon: Image.asset('assets/images/icon/morefilled.png',height: 40),
+          //     label: "More"),
         ],
       ),
     );

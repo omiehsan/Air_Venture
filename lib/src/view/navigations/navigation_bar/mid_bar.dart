@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:hawai_jubu/src/assignment.dart';
 import 'package:hawai_jubu/src/services/airport_cab/airport_cab_list.dart';
-import 'package:hawai_jubu/src/view/_screen/splash_screen/splash_screen.dart';
 import 'package:hawai_jubu/src/view/flights/status_tab.dart';
 import 'package:hawai_jubu/src/view/navigations/navigation_bar/widgets/mid_bar_widget.dart';
-
-import '../../../services/airport_cab/studentid.dart';
-import '../../../services/ticket/currentuserview.dart';
 import '../../_screen/package/package.dart';
 
 
@@ -51,13 +46,13 @@ class MidBar extends StatelessWidget {
                 onTap: ()  => Get.to(() => const Package()),
               ),
               VerticalDivider(thickness: 1),
-              MidBarWidget(
-                iconData: Icons.groups,
-                text: "Group Booking",
-                 onTap: () =>Get.to(()=> Assignment()),
-                //  onTap: ()  => Get.to(() => SplashScreen()),
-              ),
-              VerticalDivider(thickness: 1),
+              // MidBarWidget(
+              //   iconData: Icons.groups,
+              //   text: "Group Booking",
+              //    onTap: () =>Get.to(()=> Assignment()),
+              //   //  onTap: ()  => Get.to(() => SplashScreen()),
+              // ),
+              // VerticalDivider(thickness: 1),
               MidBarWidget(
                 iconData: Icons.bar_chart,
                 text: "Fare Alerts",
